@@ -1,0 +1,255 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Swagger",
+    "description": "Swagger",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "Actor",
+      "description": "API for actor"
+    }
+  ],
+  "schemes": ["http"],
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
+  "paths": {
+    "/actor": {
+      "get": {
+        "tags": ["Actor"],
+        "summary": "Get all Actor",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Actor"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["Actor"],
+        "description": "Create new Actor",
+        "parameters": [
+          {
+            "name": "actor",
+            "in": "body",
+            "description": "Actor that we want to create",
+            "schema": {
+              "$ref": "#/definitions/Actor"
+            }
+          }
+        ],
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "New Actor is created",
+            "schema": {
+              "$ref": "#/definitions/Actor"
+            }
+          }
+        }
+      }
+    },
+    "/actor/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "ID of actor that we want to find",
+          "type": "integer"
+        }
+      ],
+      "put": {
+        "summary": "Update actor with give ID",
+        "tags": ["Actor"],
+        "parameters": [
+          {
+            "name": "actor",
+            "in": "body",
+            "description": "Actor with new values of properties",
+            "schema": {
+              "$ref": "#/definitions/Actor"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Actor is updated",
+            "schema": {
+              "$ref": "#/definitions/Actor"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": ["Actor"],
+        "summary": "Get  Actor By Id",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Actor"
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete actor with given Id",
+        "tags": ["Actor"],
+        "responses": {
+          "200": {
+            "description": "Actor is deleted",
+            "schema": {
+              "$ref": "#/definitions/Actor"
+            }
+          }
+        }
+      }
+    },
+    "/customer": {
+      "get": {
+        "tags": ["Customer"],
+        "summary": "Get all Customer",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Customer"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["Customer"],
+        "description": "Create new Customer",
+        "parameters": [
+          {
+            "name": "Customer",
+            "in": "body",
+            "description": "Customer that we want to create",
+            "schema": {
+              "$ref": "#/definitions/Customer"
+            }
+          }
+        ],
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "New Customer is created",
+            "schema": {
+              "$ref": "#/definitions/Customer"
+            }
+          }
+        }
+      }
+    },
+    "/customer/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "ID of customer that we want to find",
+          "type": "integer"
+        }
+      ],
+      "put": {
+        "summary": "Update customer with give ID",
+        "tags": ["Customer"],
+        "parameters": [
+          {
+            "name": "Customer",
+            "in": "body",
+            "description": "Customer with new values of properties",
+            "schema": {
+              "$ref": "#/definitions/Customer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Customer is updated",
+            "schema": {
+              "$ref": "#/definitions/Customer"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": ["Customer"],
+        "summary": "Get  Customer By Id",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Customer"
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete Customer with given Id",
+        "tags": ["Customer"],
+        "responses": {
+          "200": {
+            "description": "Customer is deleted",
+            "schema": {
+              "$ref": "#/definitions/Customer"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Actor": {
+      "required": ["first_name", "last_name"],
+      "properties": {
+        "first_name": {
+          "type": "string"
+        },
+        "last_name": {
+          "type": "string"
+        }
+      }
+    },
+    "Customer": {
+      "required": [ "store_id", "first_name", "last_name", "address_id", "active"],
+      "properties": {
+        "store_id": { 
+          "type": "number"
+        },
+        "first_name": { 
+          "type": "string"
+        },
+        "last_name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "address_id": {
+          "type": "number"
+        },
+        "active": {
+        }
+      }
+    }
+  },
+  "Actor": {
+    "type": "array",
+    "$ref": "#/definitions/Actor"
+  },
+  "Customer": {
+    "type": "array",
+    "$ref": "#/definitions/Customer"
+  }
+}

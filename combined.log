@@ -1,0 +1,45 @@
+error: Oct-11-2022 22:46:42: 	404 ||  Not Found - URL: / -  Method: GET
+error: Oct-11-2022 22:46:42: 	404 ||  Not Found - URL: /favicon.ico -  Method: GET
+info: Oct-11-2022 22:46:59: 	Method: GET - URL: /actor - Successfully
+info: Oct-11-2022 22:47:02: 	Method: GET - URL: /actor - Successfully
+error: Oct-11-2022 22:47:16: 	Method: POST - URL: /actor - Message: must have required property 'last_name'
+info: Oct-11-2022 22:48:33: 	Method: GET - URL: /actor - Successfully
+error: Oct-11-2022 22:48:34: 	500 - Internal Server Error - getaddrinfo ENOTFOUND dasdas - URL: /actor - Method: GET
+error: Oct-11-2022 22:49:02: 	404 ||  Not Found - URL: /dasda -  Method: GET
+error: Oct-19-2022 22:21:25: 	400 - Internal Server Error - Unexpected token } in JSON at position 55 - URL: /register - Method: POST
+error: Oct-19-2022 22:22:44: 	500 - Internal Server Error - bcrypt is not defined - URL: /users/register - Method: POST
+error: Oct-19-2022 22:23:14: 	500 - Internal Server Error - bcrypt is not defined - URL: /users - Method: POST
+error: Oct-19-2022 22:23:16: 	500 - Internal Server Error - bcrypt is not defined - URL: /users - Method: POST
+error: Oct-19-2022 22:23:27: 	500 - Internal Server Error - bcrypt is not defined - URL: /users - Method: POST
+error: Oct-19-2022 22:23:39: 	500 - Internal Server Error - bcrypt is not defined - URL: /users - Method: POST
+error: Oct-19-2022 22:23:54: 	500 - Internal Server Error - bcrypt is not defined - URL: /users - Method: POST
+error: Oct-19-2022 22:24:06: 	500 - Internal Server Error - bcrypt is not defined - URL: /users - Method: POST
+error: Oct-19-2022 22:24:52: 	500 - Internal Server Error - getaddrinfo ENOTFOUND dasdas - URL: /users - Method: POST
+error: Oct-19-2022 22:25:04: 	500 - Internal Server Error - getaddrinfo ENOTFOUND dasdas - URL: /users - Method: POST
+error: Oct-19-2022 22:25:52: 	500 - Internal Server Error - getaddrinfo ENOTFOUND dasdas - URL: /users - Method: POST
+error: Oct-19-2022 22:26:46: 	500 - Internal Server Error - getaddrinfo ENOTFOUND dasdas - URL: /users - Method: POST
+error: Oct-19-2022 22:41:59: 	500 - Internal Server Error - update `users` set `rfToken` = 'qZHERGoI9NSzsHuiU7bHkDPWHKJ9FiQVp9Bqz5fCVUUKy7yNvGDcQJ8nU8hiOX2x4FNM3Xlepm7ROZ98' where `id` = 1 - Unknown column 'rfToken' in 'field list' - URL: /login - Method: POST
+error: Oct-19-2022 22:42:33: 	500 - Internal Server Error - update `users` set `refreshToken` = 'tT8gSA6wEBYEy4bFV8RmUog6hLmYAaRDBNT5IyCXaWhtUalVy1FyqXOnj2dVLh16vhoL7Y9pPfWE8e2N' where `id` = 1 - Unknown column 'refreshToken' in 'field list' - URL: /login - Method: POST
+info: Oct-19-2022 22:48:16: 	Method: POST - URL: /actor - Successfully
+error: Oct-19-2022 22:48:17: 	500 - Internal Server Error - insert into `actor` (`active`, `address_id`, `email`, `first_name`, `last_name`, `store_id`) values (1, 5, 'MARY.SMITH@sakilacustomer.org', 'MARY testtttt', 'SMITH', 1) - Unknown column 'active' in 'field list' - URL: /actor - Method: POST
+info: Oct-19-2022 22:50:45: 	Method: POST - URL: /actor - Successfully
+error: Oct-19-2022 22:50:45: 	500 - Internal Server Error - insert into `actor` (`active`, `address_id`, `email`, `first_name`, `last_name`, `store_id`) values (1, 5, 'MARY.SMITH@sakilacustomer.org', 'MARY testtttt', 'SMITH', 1) - Unknown column 'active' in 'field list' - URL: /actor - Method: POST
+info: Oct-19-2022 22:50:51: 	Method: POST - URL: /actor - Successfully
+error: Oct-19-2022 22:50:51: 	500 - Internal Server Error - insert into `actor` (`active`, `address_id`, `email`, `first_name`, `last_name`, `store_id`) values (1, 5, 'MARY.SMITH@sakilacustomer.org', 'MARY testtttt', 'SMITH', 1) - Unknown column 'active' in 'field list' - URL: /actor - Method: POST
+info: Oct-19-2022 22:50:56: 	Method: POST - URL: /actor - Successfully
+error: Oct-19-2022 22:50:56: 	500 - Internal Server Error - insert into `actor` (`active`, `address_id`, `email`, `first_name`, `last_name`, `store_id`) values (1, 5, 'MARY.SMITH@sakilacustomer.org', 'MARY testtttt', 'SMITH', 1) - Unknown column 'active' in 'field list' - URL: /actor - Method: POST
+info: Oct-19-2022 22:51:48: 	Method: GET - URL: /actor - Successfully
+info: Oct-19-2022 22:51:52: 	Method: GET - URL: /actor - Successfully
+info: Oct-19-2022 22:51:52: 	Method: GET - URL: /actor - Successfully
+info: Oct-19-2022 22:51:53: 	Method: GET - URL: /actor - Successfully
+info: Oct-19-2022 22:51:54: 	Method: GET - URL: /actor - Successfully
+info: Oct-19-2022 22:51:54: 	Method: GET - URL: /actor - Successfully
+info: Oct-19-2022 22:53:17: 	Method: GET - URL: /actor - Successfully
+info: Oct-19-2022 22:53:22: 	Method: GET - URL: /actor - Successfully
+info: Oct-19-2022 22:53:30: 	Method: GET - URL: /actor - Successfully
+error: Oct-19-2022 23:03:38: 	404 ||  Not Found - URL: /login/refreshToken -  Method: GET
+error: Oct-19-2022 23:03:44: 	404 ||  Not Found - URL: /login/refreshToken -  Method: GET
+error: Oct-19-2022 23:03:55: 	404 ||  Not Found - URL: /login/refreshToken -  Method: GET
+error: Oct-19-2022 23:04:08: 	404 ||  Not Found - URL: /login/refreshToken -  Method: GET
+error: Oct-19-2022 23:04:20: 	404 ||  Not Found - URL: /login/refreshToken -  Method: GET
+info: Oct-19-2022 23:08:22: 	Method: GET - URL: /actor - Successfully

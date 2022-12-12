@@ -1,0 +1,42 @@
+{
+	"definitions": {},
+	"type": "object",
+	"required": [
+		"store_id",
+		"first_name",
+		"last_name",
+		"address_id",
+		"active"
+	],
+	"properties": {
+		"store_id": {
+			"title": "Store_id"
+		},
+		"first_name": { 
+			"title": "First_name", 
+			"type": "string"
+		},
+		"last_name": {
+			"title": "Last_name", 
+			"type": "string"
+		},
+		"email": {
+			"title": "Email", 
+			"type": "string"
+		},
+		"address_id": {
+			"title": "Address_id"
+		},
+		"active": {
+			"title": "Active"
+		},
+		"create_date": {
+			"title": "Create_date", 
+			"type": "string"
+		},
+		"last_update": {
+			"title": "Last_update", 
+			"type": "string"
+		}
+	}
+}
