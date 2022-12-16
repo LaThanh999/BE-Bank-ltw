@@ -1,0 +1,28 @@
+{
+  "definitions": {},
+  "type": "object",
+  "required": [
+    "maTaiKhoan",
+    "soDu"
+  ],
+  "properties": {
+    "id": {
+      "title": "ID"
+    },
+    "maLoaiChuyenKhoan": {
+      "title": "MaLoaiChuyenKhoan",
+      "type": "string"
+    },
+    "soDu": {
+      "title": "TenLoaiChuyenKhoan"
+    },
+    "create_at": {
+      "title": "Create_at",
+      "type": "string"
+    },
+    "update_at": {
+      "title": "Update_at",
+      "type": "string"
+    }
+  }
+}
