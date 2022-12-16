@@ -1,0 +1,30 @@
+{
+  "definitions": {},
+  "type": "object",
+  "required": [
+    "maLoaiTaiKhoan",
+    "tenLoaiTaiKhoan"
+  ],
+  "properties": {
+    "id": {
+      "title": "ID",
+      "type": "string"
+    },
+    "maLoaiTaiKhoan": {
+      "title": "MaLoaiTaiKhoan",
+      "type": "string"
+    },
+    "tenLoaiTaiKhoan": {
+      "title": "TenLoaiTaiKhoan",
+      "type": "string"
+    },
+    "create_at": {
+      "title": "Create_at",
+      "type": "string"
+    },
+    "update_at": {
+      "title": "Update_at",
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "definitions": {},
+  "type": "object",
+  "required": [
+    "maLoaiChuyenKhoan",
+    "tenLoaiChuyenKhoan",
+    "phiGiaoDich"
+  ],
+  "properties": {
+    "id": {
+      "title": "ID"
+    },
+    "maLoaiChuyenKhoan": {
+      "title": "MaLoaiChuyenKhoan",
+      "type": "string"
+    },
+    "tenLoaiChuyenKhoan": {
+      "title": "TenLoaiChuyenKhoan",
+      "type": "string"
+    },
+    "phiGiaoDich": {
+      "title": "PhiGiaoDich"
+    },
+    "create_at": {
+      "title": "Create_at",
+      "type": "string"
+    },
+    "update_at": {
+      "title": "Update_at",
+      "type": "string"
+    }
+  }
+}
