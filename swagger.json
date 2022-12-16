@@ -222,12 +222,12 @@
       }
     },
     "Customer": {
-      "required": [ "store_id", "first_name", "last_name", "address_id", "active"],
+      "required": ["store_id", "first_name", "last_name", "address_id", "active"],
       "properties": {
-        "store_id": { 
+        "store_id": {
           "type": "number"
         },
-        "first_name": { 
+        "first_name": {
           "type": "string"
         },
         "last_name": {
@@ -239,8 +239,7 @@
         "address_id": {
           "type": "number"
         },
-        "active": {
-        }
+        "active": {}
       }
     }
   },

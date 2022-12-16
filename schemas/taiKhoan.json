@@ -1,13 +1,7 @@
 {
   "definitions": {},
   "type": "object",
-  "required": [
-   
-    "username",
-    "password",
-    "hoTen"
-  
-  ],
+  "required": ["username", "password", "hoTen"],
   "properties": {
     "id, ": {
       "title": "ID"

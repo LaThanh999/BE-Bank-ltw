@@ -1,10 +1,7 @@
 {
   "definitions": {},
   "type": "object",
-  "required": [
-    "maTaiKhoan",
-    "soDu"
-  ],
+  "required": ["maTaiKhoan", "soDu"],
   "properties": {
     "id": {
       "title": "ID"

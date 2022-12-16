@@ -31,7 +31,6 @@ app.use('/taiKhoanNganHang', require('./routes/taiKhoanNganHang.route'));
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.use(function (err, req, res, next) {
- 
   res.status(500).json({
     Message: 'Something broke!',
   });

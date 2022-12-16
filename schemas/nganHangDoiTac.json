@@ -1,12 +1,7 @@
 {
   "definitions": {},
   "type": "object",
-  "required": [
-  
-    "maNganHang",
-    "tenNganHang"
-
-  ],
+  "required": ["maNganHang", "tenNganHang"],
   "properties": {
     "id": {
       "title": "ID"

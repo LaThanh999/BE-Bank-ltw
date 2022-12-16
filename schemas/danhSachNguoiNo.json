@@ -1,42 +1,36 @@
 {
   "definitions": {},
   "type": "object",
-  "required": [
-    "maTaiKhoanChuNo",
-    "maTaiKhoanNguoiNo",
-    "soTienChuyen",
-    "noiDung",
-    "tinhTrang"
-  ],
+  "required": ["maTaiKhoanChuNo", "maTaiKhoanNguoiNo", "soTienChuyen", "noiDung", "tinhTrang"],
   "properties": {
     "id": {
       "title": "id"
     },
     "maTaiKhoanChuNo": {
       "title": "MaTaiKhoanChuNo",
-			"type": "string"
+      "type": "string"
     },
     "maTaiKhoanNguoiNo": {
       "title": "MaTaiKhoanNguoiNo",
-			"type": "string"
+      "type": "string"
     },
     "soTienChuyen": {
       "title": "SoTienChuyen"
     },
     "noiDung": {
       "title": "NoiDung",
-			"type": "string"
+      "type": "string"
     },
     "tinhTrang": {
       "title": "TinhTrang"
     },
     "create_at": {
       "title": "Create_at",
-			"type": "string"
+      "type": "string"
     },
     "update_at": {
       "title": "Update_at",
-			"type": "string"
+      "type": "string"
     }
   }
 }

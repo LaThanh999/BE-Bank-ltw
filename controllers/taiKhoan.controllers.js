@@ -1,5 +1,5 @@
 const taiKhoanModel = require('../models/taiKhoan.model');
-const crypto = require("crypto");
+const crypto = require('crypto');
 exports.getAll = async (req, res) => {
   const result = await taiKhoanModel.getAll();
   res.json(result);
@@ -19,7 +19,7 @@ exports.getById = async (req, res) => {
 
 exports.insert = async (req, res) => {
   const taiKhoan = req.body;
-  let generated_hash = crypto.createHash("md5").update(taiKhoan['password']).digest("hex");
+  let generated_hash = crypto.createHash('md5').update(taiKhoan['password']).digest('hex');
   taiKhoan['password'] = generated_hash;
   const result = await taiKhoanModel.add(taiKhoan);
   taiKhoan.id = result;
