@@ -1,0 +1,58 @@
+{
+	"definitions": {},
+	"type": "object",
+	"required": [
+
+		"maGiaoDich",
+		"taiKhoanNguoiNhan",
+		"taiKhoanNguoiGui",
+		"soTienChuyen",
+		"phiGiaoDich",
+		"maNganHangNguoiNhan",
+		"maNganHangNguoiGui",
+		"loaiGiaoDich"
+	],
+	"properties": {
+		"id": {
+			"title": "ID"
+		},
+		"maGiaoDich": {
+			"title": "MaGiaoDich",
+			"type": "string"
+		},
+		"taiKhoanNguoiNhan": {
+			"title": "TaiKhoanNguoiNhan",
+			"type": "string"
+		},
+		"taiKhoanNguoiGui": {
+			"title": "TaiKhoanNguoiGui",
+			"type": "string"
+		},
+		"soTienChuyen": {
+			"title": "ToTienChuyen"
+		},
+		"phiGiaoDich": {
+			"title": "PhiGiaoDich"
+		},
+		"maNganHangNguoiNhan": {
+			"title": "MaNganHangNguoiNhan",
+			"type": "string"
+		},
+		"maNganHangNguoiGui": {
+			"title": "MaNganHangNguoiGui",
+			"type": "string"
+		},
+		"loaiGiaoDich": {
+			"title": "LoaiGiaoDich",
+			"type": "string"
+		},
+		"create_at": {
+			"title": "Create_at",
+			"type": "string"
+		},
+		"update_at": {
+			"title": "Update_at",
+			"type": "string"
+		}
+	}
+}
