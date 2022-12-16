@@ -15,13 +15,23 @@ const swaggerUi = require('swagger-ui-express'),
 
 const authMdw = require('./middlewares/auth.mdw');
 
-app.use('/login', require('./routes/auth.route'));
-app.use('/users', require('./routes/users.route'));
-app.use('/actor', authMdw, require('./routes/actor.route'));
-app.use('/customer', require('./routes/customer.route'));
+// app.use('/login', require('./routes/auth.route'));
+// app.use('/users', require('./routes/users.route'));
+// app.use('/actor', authMdw, require('./routes/actor.route'));
+// app.use('/customer', require('./routes/customer.route'));
+
+app.use('/danhSachNguoiNhan', require('./routes/danhSachNguoiNhan.route'));
+app.use('/danhSachNguoiNo', require('./routes/danhSachNguoiNo.route'));
+app.use('/lichSuGiaoDich', require('./routes/lichSuGiaoDich.route'));
+app.use('/loaiGiaoDich', require('./routes/loaiGiaoDich.route'));
+app.use('/loaiTaiKhoan', require('./routes/loaiTaiKhoan.route'));
+app.use('/nganHangDoiTac', require('./routes/nganHangDoiTac.route'));
+app.use('/taiKhoan', require('./routes/taiKhoan.route'));
+app.use('/taiKhoanNganHang', require('./routes/taiKhoanNganHang.route'));
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.use(function (err, req, res, next) {
+ 
   res.status(500).json({
     Message: 'Something broke!',
   });
