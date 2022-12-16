@@ -1,49 +1,26 @@
 {
   "definitions": {},
   "type": "object",
-  "required": ["username", "password", "hoTen"],
+  "required": ["taiKhoan", "matKhau", "hoTen", "email", "sdt"],
   "properties": {
-    "id, ": {
-      "title": "ID"
-    },
-    "username": {
-      "title": "Username",
+    "taiKhoan": {
+      "title": "taiKhoan",
       "type": "string"
     },
-    "password": {
-      "title": "Password",
+    "matKhau": {
+      "title": "matKhau",
       "type": "string"
     },
     "hoTen": {
-      "title": "HoTen",
+      "title": "hoTen",
       "type": "string"
     },
     "email": {
-      "title": "Email",
+      "title": "matKhau",
       "type": "string"
     },
     "sdt": {
-      "title": "SDT",
-      "type": "string"
-    },
-    "loaiTaiKhoan": {
-      "title": "LoaiTaiKhoan",
-      "type": "string"
-    },
-    "OTP": {
-      "title": "OTP",
-      "type": "string"
-    },
-    "refreshToken": {
-      "title": "RefreshToken",
-      "type": "string"
-    },
-    "create_at": {
-      "title": "Create_at",
-      "type": "string"
-    },
-    "update_at": {
-      "title": "Update_at",
+      "title": "sdt",
       "type": "string"
     }
   }

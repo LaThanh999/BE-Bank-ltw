@@ -8,6 +8,7 @@ module.exports = function (schema) {
     const validate = ajv.compile(schema);
     const valid = validate(req.body);
     if (!valid) {
+      console.error(validate);
       logger.error(
         `Method: ${req.method} - URL: ${req.baseUrl} - Message: ${validate.errors[0].message}`,
       );

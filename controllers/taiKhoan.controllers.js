@@ -1,5 +1,7 @@
 const taiKhoanModel = require('../models/taiKhoan.model');
+const bcrypt = require('bcryptjs');
 const crypto = require('crypto');
+
 exports.getAll = async (req, res) => {
   const result = await taiKhoanModel.getAll();
   res.json(result);
@@ -15,15 +17,6 @@ exports.getById = async (req, res) => {
     return res.json({ Message: "Can't not find customer" });
   }
   res.json(result);
-};
-
-exports.insert = async (req, res) => {
-  const taiKhoan = req.body;
-  let generated_hash = crypto.createHash('md5').update(taiKhoan['password']).digest('hex');
-  taiKhoan['password'] = generated_hash;
-  const result = await taiKhoanModel.add(taiKhoan);
-  taiKhoan.id = result;
-  res.status(201).json(taiKhoan);
 };
 
 exports.edit = async (req, res) => {
@@ -47,4 +40,23 @@ exports.remove = async (req, res) => {
   } else {
     return res.json({ Message: 'Please check input' });
   }
+};
+
+exports.register = async (req, res) => {
+  const user = req.body;
+  user.matKhau = bcrypt.hashSync(user.matKhau, 10);
+  const temp = await taiKhoanModel.getWithUsernameOrEmail(user.taiKhoan);
+  if (temp) {
+    res.status(409).json({ message: 'Bạn đã đăng ký rồi' });
+  }
+  const result = await taiKhoanModel.add(user);
+  user.id = result[0];
+  res.status(201).json(user);
+};
+
+exports.insert = async (req, res) => {
+  const customer = req.body;
+  const result = await taiKhoanModel.add(customer);
+  customer.customer_id = result;
+  res.status(201).json(customer);
 };

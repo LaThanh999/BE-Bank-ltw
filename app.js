@@ -28,6 +28,7 @@ app.use('/loaiTaiKhoan', require('./routes/loaiTaiKhoan.route'));
 app.use('/nganHangDoiTac', require('./routes/nganHangDoiTac.route'));
 app.use('/taiKhoan', require('./routes/taiKhoan.route'));
 app.use('/taiKhoanNganHang', require('./routes/taiKhoanNganHang.route'));
+app.use('/dangNhap', require('./routes/taiKhoan.route'));
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.use(function (err, req, res, next) {
@@ -58,7 +59,7 @@ app.use((req, res, next) => {
 //   });
 // });
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3008;
 
 app.listen(PORT, () => {
   console.log(`run server http://localhost:${PORT}`);
