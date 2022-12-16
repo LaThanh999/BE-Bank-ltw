@@ -1,8 +1,7 @@
-const { error } = require('winston');
-const actorModel = require('../models/actor.model');
+const loaiGiaoDichModel = require('../models/loaiGiaoDich.model');
 
 exports.getAll = async (req, res) => {
-  const result = await actorModel.getAll();
+  const result = await loaiGiaoDichModel.getAll();
   res.json(result);
 };
 
@@ -11,28 +10,28 @@ exports.getById = async (req, res) => {
   if (id === 0) {
     return res.json({ Message: 'Please check input' });
   }
-  const result = await actorModel.getFindById(id);
+  const result = await loaiGiaoDichModel.getFindById(id);
   if (!result) {
-    return res.json({ Message: 'Cant not find actor' });
+    return res.json({ Message: "Can't not find customer" });
   }
   res.json(result);
 };
 
 exports.insert = async (req, res) => {
-  const actor = req.body;
-  const result = await actorModel.add(actor);
-  actor.actor_id = result;
-  res.status(201).json(actor);
+  const loaiGiaoDich = req.body;
+  const result = await loaiGiaoDichModel.add(loaiGiaoDich);
+  loaiGiaoDich.id = result;
+  res.status(201).json(loaiGiaoDich);
 };
 
 exports.edit = async (req, res) => {
   const id = +req.params.id;
-  const actor = req.body;
-  const result = await actorModel.update(id, actor);
+  const loaiGiaoDich = req.body;
+  const result = await loaiGiaoDichModel.update(id, loaiGiaoDich);
   if (result === 0) {
     return res.status(304).end();
   }
-  res.json(actor);
+  res.json(loaiGiaoDich);
 };
 
 exports.remove = async (req, res) => {
@@ -40,9 +39,9 @@ exports.remove = async (req, res) => {
   if (id === 0) {
     return res.json({ Message: 'Please check input' });
   }
-  const result = await actorModel.remove(id);
+  const result = await loaiGiaoDichModel.remove(id);
   if (result > 0) {
-    res.json({ Message: 'Remove actor successfully' });
+    res.json({ Message: 'Remove customer successfully' });
   } else {
     return res.json({ Message: 'Please check input' });
   }
