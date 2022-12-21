@@ -81,3 +81,9 @@ error: Dec-21-2022 21:28:19: 	500 - Internal Server Error - insert into `danhSac
 info: Dec-21-2022 21:29:02: 	Method: POST - URL: /danhSachNguoiNhan - Successfully
 error: Dec-21-2022 21:29:24: 	404 ||  Not Found - URL: /danhSachNguoiNhan/deleteByID/ -  Method: [object Object]
 info: Dec-21-2022 21:52:47: 	Method: POST - URL: /lichSuGiaoDich - Successfully
+error: Dec-21-2022 22:36:42: 	500 - Internal Server Error - Cannot read properties of undefined (reading 'forEach') - URL: /lichSuGiaoDich/getByAccountNumber/09690606904 - Method: GET
+error: Dec-21-2022 22:37:34: 	500 - Internal Server Error - Cannot read properties of undefined (reading 'forEach') - URL: /lichSuGiaoDich/getByAccountNumber/09690606904 - Method: GET
+error: Dec-21-2022 22:38:02: 	500 - Internal Server Error - print is not defined - URL: /lichSuGiaoDich/getByAccountNumber/09690606904 - Method: GET
+error: Dec-21-2022 22:39:48: 	500 - Internal Server Error - print is not defined - URL: /lichSuGiaoDich/getByAccountNumber/09690606904 - Method: GET
+error: Dec-21-2022 22:43:20: 	500 - Internal Server Error - print is not defined - URL: /lichSuGiaoDich/getByAccountNumber/09690606904 - Method: GET
+error: Dec-21-2022 22:53:35: 	500 - Internal Server Error - json is not defined - URL: /lichSuGiaoDich/getByAccountNumber/09690606904 - Method: GET

@@ -4,8 +4,6 @@ const router = express.Router();
 const {
   getAll,
   getByAccountNumber,
-  transferMoney,
-  receiveMoney,
   insert,
   edit,
   remove,
@@ -14,8 +12,7 @@ const mdwValidate = require('../middlewares/validate.mdw');
 const schema = require('../schemas/lichSuGiaoDich.json');
 
 router.get('/', getAll);
-router.get('/transferMoney/:accountNumber', transferMoney);
-router.get('/receiveMoney/:accountNumber', receiveMoney);
+router.get('/getByAccountNumber/:accountNumber', getByAccountNumber);
 router.post('/', mdwValidate(schema), insert);
 router.delete('/:id', remove);
 router.put('/:id', mdwValidate(schema), edit);

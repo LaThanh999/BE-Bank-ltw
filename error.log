@@ -46,3 +46,9 @@ error: Dec-21-2022 21:16:15: 	500 - Internal Server Error - insert into `danhSac
 error: Dec-21-2022 21:25:13: 	400 - Internal Server Error - Unexpected token } in JSON at position 48 - URL: /danhSachNguoiNhan/ - Method: POST
 error: Dec-21-2022 21:28:19: 	500 - Internal Server Error - insert into `danhSachNguoiNhan` (`create_at`, `loaiGiaoDich`, `maTaiKhoanNguoiChuyen`, `maTaiKhoanNguoiNhan`) values ('2022-12-05 15:57:20.000', 'LGD002', '0969060690', '0969060694') - Field 'maNganHang' doesn't have a default value - URL: /danhSachNguoiNhan/ - Method: POST
 error: Dec-21-2022 21:29:24: 	404 ||  Not Found - URL: /danhSachNguoiNhan/deleteByID/ -  Method: [object Object]
+error: Dec-21-2022 22:36:42: 	500 - Internal Server Error - Cannot read properties of undefined (reading 'forEach') - URL: /lichSuGiaoDich/getByAccountNumber/09690606904 - Method: GET
+error: Dec-21-2022 22:37:34: 	500 - Internal Server Error - Cannot read properties of undefined (reading 'forEach') - URL: /lichSuGiaoDich/getByAccountNumber/09690606904 - Method: GET
+error: Dec-21-2022 22:38:02: 	500 - Internal Server Error - print is not defined - URL: /lichSuGiaoDich/getByAccountNumber/09690606904 - Method: GET
+error: Dec-21-2022 22:39:48: 	500 - Internal Server Error - print is not defined - URL: /lichSuGiaoDich/getByAccountNumber/09690606904 - Method: GET
+error: Dec-21-2022 22:43:20: 	500 - Internal Server Error - print is not defined - URL: /lichSuGiaoDich/getByAccountNumber/09690606904 - Method: GET
+error: Dec-21-2022 22:53:35: 	500 - Internal Server Error - json is not defined - URL: /lichSuGiaoDich/getByAccountNumber/09690606904 - Method: GET

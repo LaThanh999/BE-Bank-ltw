@@ -19,9 +19,13 @@ exports.getByAccountNumber = async (req, res) => {
 
 exports.insert = async (req, res) => {
   const danhSachNguoiNhan = req.body;
+
     const result = await danhSachNguoiNhanModel.add(danhSachNguoiNhan);
     danhSachNguoiNhan.id = result;
-    res.status(201).json({Message: "Insert successfully", Status: 2});
+    return res.status(201).json(danhSachNguoiNhan);
+
+
+
 };
 
 exports.edit = async (req, res) => {
