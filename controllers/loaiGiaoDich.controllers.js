@@ -12,7 +12,7 @@ exports.getById = async (req, res) => {
   }
   const result = await loaiGiaoDichModel.getFindById(id);
   if (!result) {
-    return res.json({ Message: "Can't not find customer" });
+    return res.json({ Message: "Can't find " });
   }
   res.json(result);
 };
@@ -41,7 +41,7 @@ exports.remove = async (req, res) => {
   }
   const result = await loaiGiaoDichModel.remove(id);
   if (result > 0) {
-    res.json({ Message: 'Remove customer successfully' });
+    res.json({ Message: 'Remove successfully' });
   } else {
     return res.json({ Message: 'Please check input' });
   }

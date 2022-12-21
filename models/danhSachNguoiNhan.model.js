@@ -4,12 +4,13 @@ module.exports = {
   getAll() {
     return db('danhSachNguoiNhan');
   },
-  async getFindById(id) {
-    const result = await db('danhSachNguoiNhan').where({ id: id });
+
+  async getByAccountNumber(value) {
+    var result = await db('danhSachNguoiNhan').where({ maTaiKhoanNguoiChuyen: value });
     if (!result) {
       return null;
     }
-    return result[0];
+    return result;
   },
   add(danhSachNguoiNhan) {
     return db('danhSachNguoiNhan').insert(danhSachNguoiNhan);

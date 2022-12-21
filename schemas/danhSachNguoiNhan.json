@@ -2,11 +2,7 @@
   "definitions": {},
   "type": "object",
   "required": [
-    "maTaiKhoanNguoiChuyen",
-    "maTaiKhoanNguoiNhan",
-    "tenGoiNho",
-    "maNganHang",
-    "loaiGiaoDich"
+
   ],
   "properties": {
     "id": {

@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 const {
   getAll,
-  getById,
+  getByAccountNumber,
   insert,
   edit,
   remove,
@@ -12,9 +12,9 @@ const mdwValidate = require('../middlewares/validate.mdw');
 const schema = require('../schemas/danhSachNguoiNhan.json');
 
 router.get('/', getAll);
-router.get('/:id', getById);
+router.get('/getByAccountNumber/:accountNumber', getByAccountNumber);
 router.post('/', mdwValidate(schema), insert);
-router.delete('/:id', remove);
-router.put('/:id', mdwValidate(schema), edit);
+router.delete('/deleteByID/:id', remove);
+router.put('/Update/:id', mdwValidate(schema), edit);
 
 module.exports = router;

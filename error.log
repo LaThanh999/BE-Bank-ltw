@@ -26,3 +26,23 @@ error: Oct-19-2022 23:03:44: 	404 ||  Not Found - URL: /login/refreshToken -  Me
 error: Oct-19-2022 23:03:55: 	404 ||  Not Found - URL: /login/refreshToken -  Method: GET
 error: Oct-19-2022 23:04:08: 	404 ||  Not Found - URL: /login/refreshToken -  Method: GET
 error: Oct-19-2022 23:04:20: 	404 ||  Not Found - URL: /login/refreshToken -  Method: GET
+error: Dec-21-2022 20:29:54: 	404 ||  Not Found - URL: /danhSachNguoiNhan/getFindByAccountNumber?accountNumber=0969060690 -  Method: GET
+error: Dec-21-2022 20:30:26: 	404 ||  Not Found - URL: /danhSachNguoiNhan/getFindByAccountNumber?accountNumber=0969060690 -  Method: GET
+error: Dec-21-2022 20:30:30: 	404 ||  Not Found - URL: /danhSachNguoiNhan/getFindByAccountNumber?accountNumber=0969060690 -  Method: GET
+error: Dec-21-2022 20:30:38: 	404 ||  Not Found - URL: /danhSachNguoiNhan/getFindByAccountNumber?accountNumber=0969060690 -  Method: GET
+error: Dec-21-2022 20:31:22: 	404 ||  Not Found - URL: /danhSachNguoiNhan/getFindByAccountNumber?accountNumber=0969060690 -  Method: GET
+error: Dec-21-2022 20:31:32: 	404 ||  Not Found - URL: /danhSachNguoiNhan/getByAccountNumber?accountNumber=0969060690 -  Method: GET
+error: Dec-21-2022 20:31:43: 	404 ||  Not Found - URL: /danhSachNguoiNhan/getByAccountNumber?accountNumber=0969060690 -  Method: GET
+error: Dec-21-2022 20:31:58: 	404 ||  Not Found - URL: /danhSachNguoiNhan/getByAccountNumber?accountNumber=0969060690 -  Method: GET
+error: Dec-21-2022 20:34:51: 	404 ||  Not Found - URL: /danhSachNguoiNhan/getByAccountNumber?accountNumber=0969060690 -  Method: GET
+error: Dec-21-2022 20:37:28: 	404 ||  Not Found - URL: /danhSachNguoiNhan/getByAccountNumber?accountNumber=0969060690 -  Method: GET
+error: Dec-21-2022 20:45:52: 	404 ||  Not Found - URL: /danhSachNguoiNhan/getByAccountNumber?accountNumber=0969060690 -  Method: GET
+error: Dec-21-2022 20:47:45: 	404 ||  Not Found - URL: /danhSachNguoiNhan/getByAccountNumber?accountNumber=0969060690 -  Method: GET
+error: Dec-21-2022 20:48:11: 	404 ||  Not Found - URL: /danhSachNguoiNhan/getByAccountNumber?accountNumber=0969060690 -  Method: [object Object]
+error: Dec-21-2022 20:51:18: 	404 ||  Not Found - URL: /danhSachNguoiNhan/getByAccountNumber?accountNumber=0969060690 -  Method: [object Object]
+error: Dec-21-2022 20:55:20: 	404 ||  Not Found - URL: /danhSachNguoiNhan/getByAccountNumber/0969060690 -  Method: [object Object]
+error: Dec-21-2022 21:06:45: 	404 ||  Not Found - URL: /danhSachNguoiNhan/Update/2 -  Method: [object Object]
+error: Dec-21-2022 21:16:15: 	500 - Internal Server Error - insert into `danhSachNguoiNhan` (`create_at`, `loaiGiaoDich`, `maTaiKhoanNguoiChuyen`, `maTaiKhoanNguoiNhan`) values ('2022-12-05 15:57:20.000', 'LGD002', '0969060690', '0969060694') - Field 'maNganHang' doesn't have a default value - URL: /danhSachNguoiNhan/ - Method: POST
+error: Dec-21-2022 21:25:13: 	400 - Internal Server Error - Unexpected token } in JSON at position 48 - URL: /danhSachNguoiNhan/ - Method: POST
+error: Dec-21-2022 21:28:19: 	500 - Internal Server Error - insert into `danhSachNguoiNhan` (`create_at`, `loaiGiaoDich`, `maTaiKhoanNguoiChuyen`, `maTaiKhoanNguoiNhan`) values ('2022-12-05 15:57:20.000', 'LGD002', '0969060690', '0969060694') - Field 'maNganHang' doesn't have a default value - URL: /danhSachNguoiNhan/ - Method: POST
+error: Dec-21-2022 21:29:24: 	404 ||  Not Found - URL: /danhSachNguoiNhan/deleteByID/ -  Method: [object Object]

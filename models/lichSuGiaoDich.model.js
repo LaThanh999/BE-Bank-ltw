@@ -11,6 +11,20 @@ module.exports = {
     }
     return result[0];
   },
+  async transferMoney(value) {
+    var result = await db('lichSuGiaoDich').where({ taiKhoanNguoiGui: value });
+    if (!result) {
+      return null;
+    }
+    return result;
+  },
+  async receiveMoney(value) {
+    var result = await db('lichSuGiaoDich').where({ taiKhoanNguoiNhan: value });
+    if (!result) {
+      return null;
+    }
+    return result;
+  },
   add(lichSuGiaoDich) {
     return db('lichSuGiaoDich').insert(lichSuGiaoDich);
   },

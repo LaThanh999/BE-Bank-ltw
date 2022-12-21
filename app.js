@@ -46,7 +46,7 @@ app.use((req, res, next) => {
   res.status(404).json({
     Message: 'Not Found!',
   });
-  logger.error(`404 ||  ${res.statusMessage} - URL: ${req.originalUrl} -  Method: ${req.method}`);
+  logger.error(`404 ||  ${res.statusMessage} - URL: ${req.originalUrl} -  Method: ${req.params}`);
 });
 
 // app.get('/', function (req, res) {

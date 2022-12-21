@@ -5,23 +5,23 @@ exports.getAll = async (req, res) => {
   res.json(result);
 };
 
-exports.getById = async (req, res) => {
-  const id = +req.params.id || 0;
-  if (id === 0) {
+exports.getByAccountNumber = async (req, res) => {
+  let accountNumber = req.params.accountNumber;
+  if (accountNumber === "" || accountNumber === null) {
     return res.json({ Message: 'Please check input' });
   }
-  const result = await danhSachNguoiNhanModel.getFindById(id);
+  const result = await danhSachNguoiNhanModel.getByAccountNumber(accountNumber);
   if (!result) {
-    return res.json({ Message: "Can't not find customer" });
+    return res.json({ Message: "Can't find" });
   }
   res.json(result);
 };
 
 exports.insert = async (req, res) => {
   const danhSachNguoiNhan = req.body;
-  const result = await danhSachNguoiNhanModel.add(danhSachNguoiNhan);
-  danhSachNguoiNhan.id = result;
-  res.status(201).json(danhSachNguoiNhan);
+    const result = await danhSachNguoiNhanModel.add(danhSachNguoiNhan);
+    danhSachNguoiNhan.id = result;
+    res.status(201).json({Message: "Insert successfully", Status: 2});
 };
 
 exports.edit = async (req, res) => {
@@ -29,9 +29,9 @@ exports.edit = async (req, res) => {
   const danhSachNguoiNhan = req.body;
   const result = await danhSachNguoiNhanModel.update(id, danhSachNguoiNhan);
   if (result === 0) {
-    return res.status(304).end();
+    return res.status(304).json({ Message: "Update failed", Status: 4 });
   }
-  res.json(danhSachNguoiNhan);
+  res.json({ Message: "Update successfully", Status: 2 });
 };
 
 exports.remove = async (req, res) => {
@@ -41,8 +41,8 @@ exports.remove = async (req, res) => {
   }
   const result = await danhSachNguoiNhanModel.remove(id);
   if (result > 0) {
-    res.json({ Message: 'Remove customer successfully' });
+    res.json({ Message: 'Remove successfully', Status: 2 });
   } else {
-    return res.json({ Message: 'Please check input' });
+    return res.json({ Message: 'Please check input', Status: 4 });
   }
 };
