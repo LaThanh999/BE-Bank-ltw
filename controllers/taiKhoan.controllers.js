@@ -60,3 +60,10 @@ exports.insert = async (req, res) => {
   customer.customer_id = result;
   res.status(201).json(customer);
 };
+
+exports.getNumberMoney = async (req, res) => {
+  const id = +req.params.id || 0;
+  const result = await taiKhoanModel.getNumberMoneyWithId(id);
+  res.status(201).json(result);
+};
+
