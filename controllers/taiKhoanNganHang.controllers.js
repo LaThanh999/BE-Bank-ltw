@@ -60,7 +60,7 @@ exports.transfer = async (req, res) => {
   let soDuNguoiNhan = (parseFloat(accountNguoiNhan.soDu) + parseFloat(thongTinGiaoDich.soTien))
 
   // Cập nhật phí giao dịch
-  const loaiGiaoDich = await loaiGiaoDichModel.getFindByMaGD(thongTinGiaoDich.loaiGiaoDich);
+  const loaiGiaoDich = await loaiGiaoDichModel.getFindById(thongTinGiaoDich.idLoaiGiaoDich);
   ///// Kiểm tra tài khoản nào tốn phí
   if(thongTinGiaoDich.traPhi === 1 )
   {
@@ -121,25 +121,24 @@ exports.transfer = async (req, res) => {
     tienThucNhan: tienThucNhan ,
     phiGiaoDich:loaiGiaoDich.phiGiaoDich,
     noiDung:thongTinGiaoDich.noiDung,
-    maNganHangNguoiNhan:thongTinGiaoDich.maNganHangGui,
-    maNganHangNguoiGui:"LTW",
-    loaiGiaoDich:thongTinGiaoDich.loaiGiaoDich,
+    idNganHangNhan:thongTinGiaoDich.idNganHangNhan,
+    idNganHangGui:thongTinGiaoDich.idNganHangGui,
+    idLoaiGiaoDich:thongTinGiaoDich.idLoaiGiaoDich,
     ngayGioGiaoDich:ngayGioGiaoDich,
     create_at:ngayGioGiaoDich
 };
 try{
-
      await lichsuGiaoDichModel.add(data);
 
 }catch(ex)
 {
-  ////////// có lỗi phát sinh lúc add lịch sử thì s
+  ////////// có lỗi phát sinh lúc add lịch sử thì hoàn tiền lại
   await hoanTienNguoiGui(accountNguoiGui.id,soDuNguoiGui,thongTinGiaoDich.soTien,loaiGiaoDich.phiGiaoDich,thongTinGiaoDich.traPhi);
   await hoanTienNguoiNhan(accountNguoiNhan.id,soDuNguoiNhan,thongTinGiaoDich.soTien,loaiGiaoDich.phiGiaoDich,thongTinGiaoDich.traPhi);
   return res.json({ Message: 'Lỗi hệ thống',Status:4 });
 }
 
-  return res.json({ Message: 'Giao dịch thành công',Status:2 });
+  return res. json({ Message: 'Giao dịch thành công',Status:2 });
 };
 
 exports.insert = async (req, res) => {
