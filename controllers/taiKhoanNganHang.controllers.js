@@ -59,8 +59,10 @@ exports.transfer = async (req, res) => {
   let soDuNguoiGui = (parseFloat(accountNguoiGui.soDu) - parseFloat(thongTinGiaoDich.soTien)) 
   let soDuNguoiNhan = (parseFloat(accountNguoiNhan.soDu) + parseFloat(thongTinGiaoDich.soTien))
 
+
   // Cập nhật phí giao dịch
   const loaiGiaoDich = await loaiGiaoDichModel.getFindById(thongTinGiaoDich.idLoaiGiaoDich);
+
   ///// Kiểm tra tài khoản nào tốn phí
   if(thongTinGiaoDich.traPhi === 1 )
   {
@@ -70,10 +72,14 @@ exports.transfer = async (req, res) => {
   {
     soDuNguoiNhan = soDuNguoiNhan - parseFloat(loaiGiaoDich.phiGiaoDich);
   }
+
 //////// kiểm tra số tiền có âm hay không
   if(thongTinGiaoDich.soTien <= 0 )
   {
     return res.json({ Message: 'Số tiền gửi không hợp lệ.', Status: 4 });
+  }
+  if (soDuNguoiNhan < 0) {
+    return res.json({ Message: 'Số dư tài khoản nhận tiền không đủ tiền để thanh toán phí giao dịch.', Status: 4 });
   }
 
   if (soDuNguoiGui < 0) {
@@ -111,7 +117,9 @@ exports.transfer = async (req, res) => {
   let maGiaoDich = mts.toString();
 
   let ngayGioGiaoDich =  moment(date_ob).format("YYYY-MM-DD HH:mm:ss");
-  let tienThucNhan =  thongTinGiaoDich.soTien - loaiGiaoDich.phiGiaoDich;
+
+ 
+  let tienThucNhan =  thongTinGiaoDich.traPhi === 0? thongTinGiaoDich.soTien - loaiGiaoDich.phiGiaoDich : thongTinGiaoDich.soTien;
 
   var data = {
     maGiaoDich:maGiaoDich,
