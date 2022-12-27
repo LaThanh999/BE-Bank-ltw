@@ -20,11 +20,11 @@ exports.login = async (req, res) => {
   }
 
   const payload = {
-    id: taiKhoan.id,
+    userId: taiKhoan.id,
   };
 
   const opts = {
-    expiresIn: 60 * 60 * 30,
+    expiresIn: 10,
   };
 
   const accessToken = jwt.sign(payload, process.env.SECRET_KEY, opts);
@@ -36,11 +36,14 @@ exports.login = async (req, res) => {
     Authorization: true,
     accessToken,
     refreshToken,
+    userId: taiKhoan.id,
+    maTaiKhoan: taiKhoan.maTaiKhoan,
   });
 };
 
 exports.refreshToken = async (req, res) => {
   const { accessToken, refreshToken } = req.body;
+  console.log({ accessToken, refreshToken });
   try {
     const { userId } = jwt.verify(accessToken, process.env.SECRET_KEY, { ignoreExpiration: true });
     const result = await taiKhoanModel.isValidRefreshToken(userId, refreshToken);
@@ -49,7 +52,7 @@ exports.refreshToken = async (req, res) => {
         userId,
       };
       const opts = {
-        expiresIn: 60,
+        expiresIn: 60 * 60 * 30,
       };
 
       const newAccessToken = jwt.sign(payload, process.env.SECRET_KEY, opts);
@@ -62,7 +65,6 @@ exports.refreshToken = async (req, res) => {
       Message: 'Invalid refresh Token',
     });
   } catch (err) {
-    console.log(err);
     return res.status(401).json({ Message: 'Invalid accessToken' });
   }
 };

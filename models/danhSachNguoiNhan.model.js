@@ -7,13 +7,11 @@ module.exports = {
 
   async getByAccountNumber(value) {
 
-
-    var result = await db('danhSachNguoiNhan as DSNN ') 
-    .join('taiKhoan as TKNhan', 'DSNN.maTaiKhoanNguoiNhan', '=', 'TKNhan.maTaiKhoan')
-    .where({ maTaiKhoanNguoiChuyen: value })  
-      .select('DSNN.*','TKNhan.hoTen as hoTenNguoiNhan').orderBy('id', 'asc');
-
-
+    var result = await db('danhSachNguoiNhan as DSNN ')
+      .join('taiKhoan as TKNhan', 'DSNN.maTaiKhoanNguoiNhan', '=', 'TKNhan.maTaiKhoan')
+      .where({ maTaiKhoanNguoiChuyen: value })
+      .select('DSNN.*', 'TKNhan.hoTen as hoTenNguoiNhan')
+      .orderBy('id', 'asc');
     if (!result) {
       return null;
     }

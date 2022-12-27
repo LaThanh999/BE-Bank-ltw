@@ -63,7 +63,6 @@ exports.refreshToken = async (req, res) => {
       Message: 'Invalid refresh Token',
     });
   } catch (err) {
-    console.log(err);
     return res.status(401).json({ Message: 'Invalid accessToken' });
   }
 };

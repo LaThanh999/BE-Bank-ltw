@@ -13,13 +13,14 @@ module.exports = {
   },
   async getByAccountNumber(value) {
 
-
     var result = await db('lichSuGiaoDich as LSGD')
-    .join('taiKhoan as TKNhan', 'LSGD.taiKhoanNguoiNhan', '=', 'TKNhan.maTaiKhoan')
-    .join('taiKhoan as TKGui', 'LSGD.taiKhoanNguoiGui', '=', 'TKGui.maTaiKhoan')
-    .where({ taiKhoanNguoiGui: value })
-    .orWhere({ taiKhoanNguoiNhan: value }) 
-    .select('LSGD.*','TKNhan.hoTen as hoTenNguoiNhan','TKGui.hoTen as hoTenNguoiGui').orderBy('id', 'asc');
+      .join('taiKhoan as TKNhan', 'LSGD.taiKhoanNguoiNhan', '=', 'TKNhan.maTaiKhoan')
+      .join('taiKhoan as TKGui', 'LSGD.taiKhoanNguoiGui', '=', 'TKGui.maTaiKhoan')
+      .where({ taiKhoanNguoiGui: value })
+      .orWhere({ taiKhoanNguoiNhan: value })
+      .select('LSGD.*', 'TKNhan.hoTen as hoTenNguoiNhan', 'TKGui.hoTen as hoTenNguoiGui')
+      .orderBy('id', 'asc');
+
     if (!result) {
       return null;
     }
