@@ -28,7 +28,10 @@
       "type": "string"
     },
     "soTienChuyen": {
-      "title": "ToTienChuyen"
+      "title": "SoTienChuyen"
+    },
+    "tienThucNhan": {
+      "title": "tienThucNhan"
     },
     "noiDung": {
       "title": "NoiDung",
