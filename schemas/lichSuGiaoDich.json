@@ -30,6 +30,10 @@
     "soTienChuyen": {
       "title": "ToTienChuyen"
     },
+    "noiDung": {
+      "title": "NoiDung",
+      "type": "string"
+    },
     "phiGiaoDich": {
       "title": "PhiGiaoDich"
     },

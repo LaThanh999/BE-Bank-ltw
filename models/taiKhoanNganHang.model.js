@@ -11,6 +11,14 @@ module.exports = {
     }
     return result[0];
   },
+  async getFindByAccountNumber(accountNumber) {
+    const result = await db('taiKhoanNganHang').where({ maTaiKhoan: accountNumber });
+    if (!result) {
+      return null;
+    }
+    return result[0];
+  },
+
   add(taiKhoanNganHang) {
     return db('taiKhoanNganHang').insert(taiKhoanNganHang);
   },
@@ -20,4 +28,15 @@ module.exports = {
   update(id, taiKhoanNganHang) {
     return db('taiKhoanNganHang').where('id', id).update(taiKhoanNganHang);
   },
+  updateAccount(id, soDu) {
+    
+    return db('taiKhoanNganHang').update('soDu',soDu).where('id', id);
+  },
+  // async update(thongTinGiaoDich) {
+
+  //   let taiKhoan = await db('taiKhoanNganHang').where({ maTaiKhoan: thongTinGiaoDich.maTaiKhoan });
+  //   let isValid = false;
+  //   let soDu = taiKhoan.so
+  //   return db('taiKhoanNganHang').where('id', id).update(taiKhoanNganHang);
+  // },
 };

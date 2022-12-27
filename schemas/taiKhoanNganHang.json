@@ -6,12 +6,12 @@
     "id": {
       "title": "ID"
     },
-    "maLoaiChuyenKhoan": {
-      "title": "MaLoaiChuyenKhoan",
+    "maTaiKhoan": {
+      "title": "maTaiKhoan",
       "type": "string"
     },
     "soDu": {
-      "title": "TenLoaiChuyenKhoan"
+      "title": "soDu"
     },
     "create_at": {
       "title": "Create_at",
@@ -21,5 +21,7 @@
       "title": "Update_at",
       "type": "string"
     }
+
+
   }
 }
