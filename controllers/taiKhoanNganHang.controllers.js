@@ -30,8 +30,8 @@ exports.transfer = async (req, res) => {
   if (!accountNguoiGui || !accountNguoiNhan) {
     return res.json({ Message: 'Không tìm thấy tài khoản ngân hàng.', Status: 4 });
   }
-  const soDuNguoiGui =+ (accountNguoiGui.soDu - thongTinGiaoDich.soTien) ;
-  const soDuNguoiNhan =+ (accountNguoiNhan.soDu + thongTinGiaoDich.soTien) ;
+  const soDuNguoiGui = (parseFloat(accountNguoiGui.soDu) - parseFloat(thongTinGiaoDich.soTien)) 
+  const soDuNguoiNhan = (parseFloat(accountNguoiNhan.soDu) + parseFloat(thongTinGiaoDich.soTien))
   if(thongTinGiaoDich.soTien <= 0 )
   {
     return res.json({ Message: 'Số tiền gửi không hợp lệ.', Status: 4 });
@@ -52,7 +52,7 @@ exports.transfer = async (req, res) => {
 
     if (!result1) {
       //Update lại tài khoản người gửi
-      let moneyBack =+ (accountNguoiGui.soDu + thongTinGiaoDich.soTien);
+      let moneyBack = soDuNguoiGui +   parseFloat(thongTinGiaoDich.soTien);
       await taiKhoanNganHangModel.updateAccount(accountNguoiGui.id,moneyBack);
       return res.json({ Message: "Update tài khoản gửi thất bại.", Status: 4 });
     }
