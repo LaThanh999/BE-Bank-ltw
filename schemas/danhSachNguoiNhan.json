@@ -20,11 +20,11 @@
       "title": "TenGoiNho",
       "type": "string"
     },
-    "maNganHang": {
+    "idMaNganHang": {
       "title": "MaNganHang",
       "type": "string"
     },
-    "loaiGiaoDich": {
+    "idLoaiGiaoDich": {
       "title": "LoaiGiaoDich",
       "type": "string"
     },
