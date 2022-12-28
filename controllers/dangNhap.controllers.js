@@ -24,7 +24,7 @@ exports.login = async (req, res) => {
   };
 
   const opts = {
-    expiresIn: 10,
+    expiresIn: 60 * 60 * 30,
   };
 
   const accessToken = jwt.sign(payload, process.env.SECRET_KEY, opts);
