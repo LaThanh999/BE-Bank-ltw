@@ -1,4 +1,5 @@
 const danhSachNguoGuiModel = require('../models/danhSachNguoiNo.model');
+const moment = require('moment');
 
 exports.getAll = async (req, res) => {
   const result = await danhSachNguoGuiModel.getAll();
@@ -17,8 +18,23 @@ exports.getById = async (req, res) => {
   res.json(result);
 };
 
+exports.getByNumberCard = async (req, res) => {
+  const numberCard = +req.body.numberCard;
+  const type = +req.body.type;
+
+  if (!numberCard || !type) {
+    return res.json({ Message: 'Please check input' });
+  }
+  const result = await danhSachNguoGuiModel.getFindByNumberCard(numberCard, type);
+  if (!result) {
+    return res.json({ Message: "Can't find " });
+  }
+  res.json(result);
+};
+
 exports.insert = async (req, res) => {
   const danhSachNguoiNo = req.body;
+  danhSachNguoiNo.create_at = moment().format('YYYY-MM-DD HH:mm:ss').toString();
   const result = await danhSachNguoGuiModel.add(danhSachNguoiNo);
   danhSachNguoiNo.id = result;
   res.status(201).json(danhSachNguoiNo);

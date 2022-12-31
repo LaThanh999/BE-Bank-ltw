@@ -1,7 +1,7 @@
 {
   "definitions": {},
   "type": "object",
-  "required": ["maTaiKhoanChuNo", "maTaiKhoanNguoiNo", "soTienChuyen", "noiDung", "tinhTrang"],
+  "required": ["maTaiKhoanChuNo", "maTaiKhoanNguoiNo", "soTienChuyen", "tinhTrang"],
   "properties": {
     "id": {
       "title": "id"

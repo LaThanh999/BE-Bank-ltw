@@ -7,7 +7,7 @@ exports.getAll = async (req, res) => {
 
 exports.getByAccountNumber = async (req, res) => {
   let accountNumber = req.params.accountNumber;
-  if (accountNumber === "" || accountNumber === null) {
+  if (accountNumber === '' || accountNumber === null) {
     return res.json({ Message: 'Please check input' });
   }
   const result = await danhSachNguoiNhanModel.getByAccountNumber(accountNumber);
@@ -17,15 +17,25 @@ exports.getByAccountNumber = async (req, res) => {
   res.json(result);
 };
 
+exports.getByAccountNumberUser = async (req, res) => {
+  let accountFrom = req.body.accountFrom;
+  let accountTo = req.body.accountTo;
+  if (!accountFrom || !accountTo) {
+    return res.json({ Message: 'Please check input' });
+  }
+  const result = await danhSachNguoiNhanModel.getByAccountNumberUser(accountFrom, accountTo);
+  if (!result) {
+    return res.json({ Message: "Can't find" });
+  }
+  res.json(result);
+};
+
 exports.insert = async (req, res) => {
   const danhSachNguoiNhan = req.body;
 
-    const result = await danhSachNguoiNhanModel.add(danhSachNguoiNhan);
-    danhSachNguoiNhan.id = result;
-    return res.status(201).json(danhSachNguoiNhan);
-
-
-
+  const result = await danhSachNguoiNhanModel.add(danhSachNguoiNhan);
+  danhSachNguoiNhan.id = result;
+  return res.status(201).json(danhSachNguoiNhan);
 };
 
 exports.edit = async (req, res) => {
@@ -33,9 +43,9 @@ exports.edit = async (req, res) => {
   const danhSachNguoiNhan = req.body;
   const result = await danhSachNguoiNhanModel.update(id, danhSachNguoiNhan);
   if (result === 0) {
-    return res.status(304).json({ Message: "Update failed", Status: 4 });
+    return res.status(304).json({ Message: 'Update failed', Status: 4 });
   }
-  res.json({ Message: "Update successfully", Status: 2 });
+  res.json({ Message: 'Update successfully', Status: 2 });
 };
 
 exports.remove = async (req, res) => {

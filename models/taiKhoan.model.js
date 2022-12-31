@@ -14,6 +14,22 @@ module.exports = {
     return result[0];
   },
 
+  async getFindByNumberCard(numberCard) {
+    const result = await db('taiKhoan').where({ maTaiKhoan: numberCard });
+    if (!result) {
+      return null;
+    }
+    return result[0];
+  },
+
+  async getFindByNumberCardAndBankId(numberCard, bankId) {
+    const result = await db('taiKhoan').where({ maTaiKhoan: numberCard, maNganHang: bankId });
+    if (!result) {
+      return null;
+    }
+    return result[0];
+  },
+
   async getWithUsernameOrEmail(value) {
     const result = await db('taiKhoan').where({ taiKhoan: value }).orWhere({ email: value });
     if (_.isEmpty(result)) {

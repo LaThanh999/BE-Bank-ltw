@@ -5,13 +5,25 @@ module.exports = {
     return db('danhSachNguoiNhan');
   },
 
-  async getByAccountNumber(value) {
+  async getByAccountNumberUser(valueFrom, valueTo) {
+    var result = await db('danhSachNguoiNhan as DSNN ')
+      .join('taiKhoan as TKNhan', 'DSNN.maTaiKhoanNguoiNhan', '=', 'TKNhan.maTaiKhoan')
+      .join('nganHangDoiTac as NH', 'DSNN.idNganHang', '=', 'NH.id')
+      .where({ maTaiKhoanNguoiNhan: valueTo, maTaiKhoanNguoiChuyen: valueFrom })
+      .select('DSNN.*', 'TKNhan.hoTen as hoTenNguoiNhan', 'NH.tenNganHang')
+      .orderBy('id', 'asc');
+    if (!result[0]) {
+      return null;
+    }
+    return result[0];
+  },
 
+  async getByAccountNumber(value) {
     var result = await db('danhSachNguoiNhan as DSNN ')
       .join('taiKhoan as TKNhan', 'DSNN.maTaiKhoanNguoiNhan', '=', 'TKNhan.maTaiKhoan')
       .join('nganHangDoiTac as NH', 'DSNN.idNganHang', '=', 'NH.id')
       .where({ maTaiKhoanNguoiChuyen: value })
-      .select('DSNN.*', 'TKNhan.hoTen as hoTenNguoiNhan','NH.tenNganHang')
+      .select('DSNN.*', 'TKNhan.hoTen as hoTenNguoiNhan', 'NH.tenNganHang')
       .orderBy('id', 'asc');
     if (!result) {
       return null;

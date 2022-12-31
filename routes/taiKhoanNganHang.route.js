@@ -7,7 +7,7 @@ const {
   insert,
   edit,
   remove,
-  transfer
+  transfer,
 } = require('../controllers/taiKhoanNganHang.controllers');
 const mdwValidate = require('../middlewares/validate.mdw');
 const schema = require('../schemas/taiKhoanNganHang.json');
@@ -17,5 +17,5 @@ router.get('/:id', getById);
 router.post('/', mdwValidate(schema), insert);
 router.delete('/:id', remove);
 router.put('/:id', mdwValidate(schema), edit);
-router.post('/transfer',transfer);
+router.post('/transfer', transfer);
 module.exports = router;

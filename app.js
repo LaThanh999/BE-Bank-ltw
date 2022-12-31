@@ -29,6 +29,7 @@ app.use('/nganHangDoiTac', require('./routes/nganHangDoiTac.route'));
 app.use('/taiKhoan', authMdw, require('./routes/taiKhoan.route'));
 app.use('/taiKhoanNganHang', require('./routes/taiKhoanNganHang.route'));
 app.use('/dangNhap', require('./routes/dangNhap.route'));
+app.use('/sendOTP', require('./routes/otpTransfer.route'));
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.use(function (err, req, res, next) {

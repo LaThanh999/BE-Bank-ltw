@@ -7,6 +7,31 @@ exports.getAll = async (req, res) => {
   res.json(result);
 };
 
+exports.getByNumberCard = async (req, res) => {
+  const numberCard = +req.params.numberCard || 0;
+  if (numberCard === 0) {
+    return res.json({ Message: 'Please check input' });
+  }
+  const result = await taiKhoanModel.getFindByNumberCard(numberCard);
+  if (!result) {
+    return res.json({ Message: "Can't find " });
+  }
+  res.json(result);
+};
+
+exports.getByNumberCardAndBankId = async (req, res) => {
+  const numberCard = +req.body.numberCard;
+  const bankId = +req.body.bankId;
+  if (!numberCard || !bankId) {
+    return res.json({ Message: 'Please check input' });
+  }
+  const result = await taiKhoanModel.getFindByNumberCardAndBankId(numberCard, bankId);
+  if (!result) {
+    return res.json({ Message: "Can't find " });
+  }
+  res.json(result);
+};
+
 exports.getById = async (req, res) => {
   const id = +req.params.id || 0;
   if (id === 0) {
@@ -66,4 +91,3 @@ exports.getNumberMoney = async (req, res) => {
   const result = await taiKhoanModel.getNumberMoneyWithId(id);
   res.status(201).json(result);
 };
-

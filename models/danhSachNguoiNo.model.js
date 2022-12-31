@@ -11,6 +11,41 @@ module.exports = {
     }
     return result[0];
   },
+  async getFindByNumberCard(numberCard, type) {
+    /// type = 1 => From
+    let result;
+    if (type == 1) {
+      result = await db('danhSachNguoiNo as DSNN ')
+        .join('taiKhoan as TK', 'DSNN.maTaiKhoanChuNo ', '=', 'TK.maTaiKhoan')
+        .join('taiKhoan as TK1', 'DSNN.maTaiKhoanNguoiNo', '=', 'TK1.maTaiKhoan')
+        .where({ maTaiKhoanChuNo: numberCard })
+        .select(
+          'TK.hoTen as hoTenChuNo',
+          'TK.maNganHang as maNganHangChuNo',
+          'TK1.hoTen as hoTenNguoiNo',
+          'TK1.maNganHang as maNganHangNguoiNo',
+          'DSNN.*',
+        );
+    }
+    /// type = 2 => To
+    if (type != 1) {
+      result = await db('danhSachNguoiNo as DSNN ')
+        .join('taiKhoan as TK', 'DSNN.maTaiKhoanChuNo ', '=', 'TK.maTaiKhoan')
+        .join('taiKhoan as TK1', 'DSNN.maTaiKhoanNguoiNo', '=', 'TK1.maTaiKhoan')
+        .where({ maTaiKhoanNguoiNo: numberCard })
+        .select(
+          'TK.hoTen as hoTenChuNo',
+          'TK.maNganHang as maNganHangChuNo',
+          'TK1.hoTen as hoTenNguoiNo',
+          'TK1.maNganHang as maNganHangNguoiNo',
+          'DSNN.*',
+        );
+    }
+    if (!result) {
+      return null;
+    }
+    return result;
+  },
   add(danhSachNguoiNo) {
     return db('danhSachNguoiNo').insert(danhSachNguoiNo);
   },
