@@ -27,7 +27,7 @@ app.use('/loaiGiaoDich', authMdw, require('./routes/loaiGiaoDich.route'));
 app.use('/loaiTaiKhoan', authMdw, require('./routes/loaiTaiKhoan.route'));
 app.use('/nganHangDoiTac', authMdw, require('./routes/nganHangDoiTac.route'));
 app.use('/taiKhoan', authMdw, require('./routes/taiKhoan.route'));
-app.use('/taiKhoanNganHang', authMdw, require('./routes/taiKhoanNganHang.route'));
+// app.use('/taiKhoanNganHang', authMdw, require('./routes/taiKhoanNganHang.route'));
 app.use('/dangNhap', require('./routes/dangNhap.route'));
 app.use('/sendOTP', require('./routes/otpTransfer.route'));
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
