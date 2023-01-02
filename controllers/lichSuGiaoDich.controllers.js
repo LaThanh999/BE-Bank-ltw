@@ -21,35 +21,29 @@ exports.getById = async (req, res) => {
 };
 exports.getByAccountNumber = async (req, res) => {
   let accountNumber = req.params.accountNumber;
-  if (accountNumber === "" || accountNumber === null) {
+  if (accountNumber === '' || accountNumber === null) {
     return res.json({ Message: 'Please check input' });
   }
   const result = await lichSuGiaoDichModel.getByAccountNumber(accountNumber);
   if (!result) {
     return res.json({ Message: "Can't find" });
   }
-  if(result.length !== 0)
-  {
-    result.forEach(item => {
-      if(item.taiKhoanNguoiGui ===  accountNumber)
-      {
+  if (result.length !== 0) {
+    result.forEach((item) => {
+      if (item.taiKhoanNguoiGui === accountNumber) {
         item.type = 1;
-   
       }
-      if(item.taiKhoanNguoiNhan ===  accountNumber)
-      {
+      if (item.taiKhoanNguoiNhan === accountNumber) {
         item.type = 2;
-    
       }
       // print(temp)
     });
-   
   }
   res.json(result);
 };
 exports.transferMoney = async (req, res) => {
   let accountNumber = req.params.accountNumber;
-  if (accountNumber === "" || accountNumber === null) {
+  if (accountNumber === '' || accountNumber === null) {
     return res.json({ Message: 'Please check input' });
   }
   const result = await lichSuGiaoDichModel.transferMoney(accountNumber);
@@ -60,7 +54,7 @@ exports.transferMoney = async (req, res) => {
 };
 exports.receiveMoney = async (req, res) => {
   let accountNumber = req.params.accountNumber;
-  if (accountNumber === "" || accountNumber === null) {
+  if (accountNumber === '' || accountNumber === null) {
     return res.json({ Message: 'Please check input' });
   }
   const result = await lichSuGiaoDichModel.receiveMoney(accountNumber);

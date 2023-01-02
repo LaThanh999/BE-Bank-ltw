@@ -42,15 +42,12 @@
     },
     "idNganHangNhan": {
       "title": "IDNganHangNhan"
-
     },
     "idNganHangGui": {
       "title": "IDNganHangGui"
- 
     },
     "idLoaiGiaoDich": {
       "title": "IDLoaiGiaoDich"
-  
     },
     "create_at": {
       "title": "Create_at",
@@ -62,4 +59,3 @@
     }
   }
 }
-

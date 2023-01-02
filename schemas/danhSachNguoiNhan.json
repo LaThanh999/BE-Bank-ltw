@@ -1,9 +1,7 @@
 {
   "definitions": {},
   "type": "object",
-  "required": [
-
-  ],
+  "required": [],
   "properties": {
     "id": {
       "title": "ID"

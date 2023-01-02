@@ -29,8 +29,7 @@ module.exports = {
     return db('taiKhoanNganHang').where('id', id).update(taiKhoanNganHang);
   },
   updateAccount(id, soDu) {
-    
-    return db('taiKhoanNganHang').update('soDu',soDu).where('id', id);
+    return db('taiKhoanNganHang').update('soDu', soDu).where('id', id);
   },
   // async update(thongTinGiaoDich) {
 
