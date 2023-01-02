@@ -31,7 +31,10 @@ module.exports = {
   },
 
   async getWithUsernameOrEmail(value) {
-    const result = await db('taiKhoan').where({ taiKhoan: value }).orWhere({ email: value });
+    const result = await db('taiKhoan')
+      .where({ taiKhoan: value })
+      .orWhere({ email: value })
+      .orWhere({ maTaiKhoan: value });
     if (_.isEmpty(result)) {
       return null;
     }

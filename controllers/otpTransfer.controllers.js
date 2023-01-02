@@ -10,7 +10,7 @@ exports.sendOTP = async (req, res) => {
   const result = await otpModel.add({ numberCardFrom, numberCardTo, otp });
   // get tai khoan
   const account = await taiKhoanModel.getFindByNumberCard(numberCardFrom);
-  helper.sendMai(account.email, account.hoTen, otp);
+  helper.sendMail(account.email, account.hoTen, otp);
 
   res.status(201).json(result);
 };

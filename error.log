@@ -156,3 +156,35 @@ error: Dec-30-2022 23:39:27: 	500 - Internal Server Error - Undefined binding(s)
 error: Dec-30-2022 23:39:27: 	500 - Internal Server Error - Undefined binding(s) detected when compiling SELECT. Undefined column(s): [numberCardTo] query: select * from `otpTransfer` where `numberCardFrom` = ? and `numberCardTo` = ? order by `update_at` desc - URL: /sendOTP/isVerifyOtp - Method: POST
 error: Dec-30-2022 23:40:00: 	500 - Internal Server Error - Undefined binding(s) detected when compiling SELECT. Undefined column(s): [numberCardTo] query: select * from `otpTransfer` where `numberCardFrom` = ? and `numberCardTo` = ? order by `update_at` desc - URL: /sendOTP/isVerifyOtp - Method: POST
 error: Dec-30-2022 23:40:39: 	500 - Internal Server Error - Undefined binding(s) detected when compiling SELECT. Undefined column(s): [numberCardTo] query: select * from `otpTransfer` where `numberCardFrom` = ? and `numberCardTo` = ? order by `update_at` desc - URL: /sendOTP/isVerifyOtp - Method: POST
+error: Dec-31-2022 16:33:05: 	404 ||  Not Found - URL: /dangNhap/resetPassword -  Method: [object Object]
+error: Dec-31-2022 16:33:16: 	404 ||  Not Found - URL: /dangNhap/resetPassword -  Method: [object Object]
+error: Dec-31-2022 16:33:23: 	404 ||  Not Found - URL: /dangNhap/resetPassword -  Method: [object Object]
+error: Dec-31-2022 16:34:59: 	500 - Internal Server Error - update `TAIKHOAN` set `matKhau` = '$2a$10$MLf6b4AYw75CmJom57oLWOyQqsE.S17uMFJIW57vqlLd7juxPpQWS' where `id` = 2 - Table 'defaultdb.TAIKHOAN' doesn't exist - URL: /dangKy/resetPassword - Method: POST
+error: Dec-31-2022 16:35:29: 	500 - Internal Server Error - update `TAIKHOAN` set `matKhau` = '$2a$10$GgzotVXDtqb9kJg0YHxzi.e03I/x8POYmScw/J6Y3LKwvMUWn5.Q6' where `id` = 2 - Table 'defaultdb.TAIKHOAN' doesn't exist - URL: /dangKy/resetPassword - Method: POST
+error: Dec-31-2022 16:35:51: 	500 - Internal Server Error - update `TAIKHOAN` set `matKhau` = '$2a$10$63MiL3BZu6m7I709Pxxvmeefud2zyoiXn0Qc4ztNQy8N8QEG8Rth2' where `id` = 2 - Table 'defaultdb.TAIKHOAN' doesn't exist - URL: /dangKy/resetPassword - Method: POST
+error: Dec-31-2022 16:36:21: 	500 - Internal Server Error - update `TAIKHOAN` set `matKhau` = '$2a$10$p5aVy4wDcb8EPW1w/IahS.35hqRu3HUVcksRJRgup4fw4bR44zXIS' where `id` = 2 - Table 'defaultdb.TAIKHOAN' doesn't exist - URL: /dangKy/resetPassword - Method: POST
+error: Dec-31-2022 16:43:48: 	404 ||  Not Found - URL: /dangKy/resetPassword -  Method: [object Object]
+error: Dec-31-2022 16:44:43: 	500 - Internal Server Error - user is not defined - URL: /dangNhap/resetPassword - Method: POST
+error: Dec-31-2022 16:45:12: 	500 - Internal Server Error - userModel is not defined - URL: /dangNhap/resetPassword - Method: POST
+error: Jan-01-2023 05:22:07: 	500 - Internal Server Error - getaddrinfo ENOTFOUND db-mysql-sgp1-81717-do-user-13082527-0.b.db.ondigitalocean.com - URL: /danhSachNguoiNo/getByNumberCard - Method: POST
+error: Jan-01-2023 05:22:07: 	500 - Internal Server Error - getaddrinfo ENOTFOUND db-mysql-sgp1-81717-do-user-13082527-0.b.db.ondigitalocean.com - URL: /danhSachNguoiNhan/getByAccountNumber/0969060690 - Method: GET
+error: Jan-01-2023 05:22:07: 	500 - Internal Server Error - getaddrinfo ENOTFOUND db-mysql-sgp1-81717-do-user-13082527-0.b.db.ondigitalocean.com - URL: /nganHangDoiTac - Method: GET
+error: Jan-01-2023 05:22:07: 	500 - Internal Server Error - getaddrinfo ENOTFOUND db-mysql-sgp1-81717-do-user-13082527-0.b.db.ondigitalocean.com - URL: /lichSuGiaoDich/getByAccountNumber/0969060690 - Method: GET
+error: Jan-01-2023 05:22:07: 	500 - Internal Server Error - getaddrinfo ENOTFOUND db-mysql-sgp1-81717-do-user-13082527-0.b.db.ondigitalocean.com - URL: /taiKhoan/getMoney/2 - Method: GET
+error: Jan-01-2023 05:22:07: 	500 - Internal Server Error - getaddrinfo ENOTFOUND db-mysql-sgp1-81717-do-user-13082527-0.b.db.ondigitalocean.com - URL: /danhSachNguoiNo/getByNumberCard - Method: POST
+error: Jan-01-2023 05:22:07: 	500 - Internal Server Error - getaddrinfo ENOTFOUND db-mysql-sgp1-81717-do-user-13082527-0.b.db.ondigitalocean.com - URL: /danhSachNguoiNhan/getByAccountNumber/0969060690 - Method: GET
+error: Jan-01-2023 05:22:07: 	500 - Internal Server Error - getaddrinfo ENOTFOUND db-mysql-sgp1-81717-do-user-13082527-0.b.db.ondigitalocean.com - URL: /nganHangDoiTac - Method: GET
+error: Jan-02-2023 17:38:27: 	500 - Internal Server Error - Undefined binding(s) detected when compiling WHERE. Undefined column(s): [email] query: where `email` = ? - URL: /dangNhap/sendForgotPassWordOtp - Method: POST
+error: Jan-02-2023 17:39:02: 	500 - Internal Server Error - Undefined binding(s) detected when compiling WHERE. Undefined column(s): [email] query: where `email` = ? - URL: /dangNhap/sendForgotPassWordOtp - Method: POST
+error: Jan-02-2023 17:39:30: 	500 - Internal Server Error - Undefined binding(s) detected when compiling WHERE. Undefined column(s): [email] query: where `email` = ? - URL: /dangNhap/sendForgotPassWordOtp - Method: POST
+error: Jan-02-2023 18:05:46: 	500 - Internal Server Error - Undefined binding(s) detected when compiling WHERE. Undefined column(s): [email] query: where `email` = ? - URL: /dangNhap/updateForgotPassWord - Method: POST
+error: Jan-02-2023 18:06:23: 	500 - Internal Server Error - Undefined binding(s) detected when compiling WHERE. Undefined column(s): [email] query: where `email` = ? - URL: /dangNhap/updateForgotPassWord - Method: POST
+error: Jan-02-2023 18:42:11: 	404 ||  Not Found - URL: /users//register -  Method: [object Object]
+error: Jan-02-2023 18:42:15: 	404 ||  Not Found - URL: /users/register -  Method: [object Object]
+error: Jan-02-2023 18:42:23: 	404 ||  Not Found - URL: /users/register -  Method: [object Object]
+error: Jan-02-2023 18:42:41: 	404 ||  Not Found - URL: /dangKy -  Method: [object Object]
+error: Jan-02-2023 18:43:02: 	500 - Internal Server Error - Illegal arguments: undefined, string - URL: /dangKy - Method: POST
+error: Jan-02-2023 19:16:21: 	500 - Internal Server Error - Knex: Timeout acquiring a connection. The pool is probably full. Are you missing a .transacting(trx) call? - URL: /nganHangDoiTac - Method: GET
+error: Jan-02-2023 19:16:21: 	500 - Internal Server Error - Knex: Timeout acquiring a connection. The pool is probably full. Are you missing a .transacting(trx) call? - URL: /taiKhoan/getMoney/7 - Method: GET
+error: Jan-02-2023 19:16:21: 	500 - Internal Server Error - Knex: Timeout acquiring a connection. The pool is probably full. Are you missing a .transacting(trx) call? - URL: /danhSachNguoiNhan/getByAccountNumber/null - Method: GET
+error: Jan-02-2023 19:16:21: 	500 - Internal Server Error - Knex: Timeout acquiring a connection. The pool is probably full. Are you missing a .transacting(trx) call? - URL: /lichSuGiaoDich/getByAccountNumber/null - Method: GET

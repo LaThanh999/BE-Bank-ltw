@@ -15,7 +15,6 @@ module.exports = {
   },
 
   async getFindByNumberCard(numberCardFrom, numberCardTo) {
-    console.log({ numberCardFrom, numberCardTo });
     const result = await db('otpTransfer')
       .where({ numberCardFrom, numberCardTo })
       .orderBy('update_at', 'desc');

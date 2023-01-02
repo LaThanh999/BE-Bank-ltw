@@ -41,7 +41,7 @@ const getContent = (name, otp) => {
         `;
 };
 
-exports.sendMai = (email, name, otp) => {
+exports.sendMail = (email, name, otp) => {
   transporter.sendMail(
     {
       from: '"Bank LTW" <lvnt999@outlook.com.vn>',
