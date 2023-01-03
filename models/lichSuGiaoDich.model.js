@@ -12,6 +12,7 @@ module.exports = {
     return result[0];
   },
   async getByAccountNumber(value) {
+    
     var result = await db('lichSuGiaoDich as LSGD')
       .join('taiKhoan as TKNhan', 'LSGD.taiKhoanNguoiNhan', '=', 'TKNhan.maTaiKhoan')
       .join('taiKhoan as TKGui', 'LSGD.taiKhoanNguoiGui', '=', 'TKGui.maTaiKhoan')

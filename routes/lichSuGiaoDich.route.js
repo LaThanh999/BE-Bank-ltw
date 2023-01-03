@@ -12,7 +12,7 @@ const mdwValidate = require('../middlewares/validate.mdw');
 const schema = require('../schemas/lichSuGiaoDich.json');
 
 router.get('/', getAll);
-router.get('/getByAccountNumber/:accountNumber', getByAccountNumber);
+router.get('/getByAccountNumber/:accountNumber/:type', getByAccountNumber);
 router.post('/', mdwValidate(schema), insert);
 router.delete('/:id', remove);
 router.put('/:id', mdwValidate(schema), edit);

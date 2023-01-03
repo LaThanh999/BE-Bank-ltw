@@ -24,10 +24,18 @@ exports.getByAccountNumber = async (req, res) => {
   if (accountNumber === '' || accountNumber === null) {
     return res.json({ Message: 'Please check input' });
   }
+
   const result = await historyModel.getByAccountNumber(accountNumber);
+
+  let type = + req.params.type || 0;
+  if (type === '' || type === null) {
+    type = 0;
+  }
   if (!result) {
     return res.json({ Message: "Can't find" });
   }
+
+  let array = [];
   if (result.length !== 0) {
     result.forEach((item) => {
       if (item.taiKhoanNguoiGui === accountNumber) {
@@ -38,9 +46,32 @@ exports.getByAccountNumber = async (req, res) => {
       }
       // print(temp)
     });
+
+////// Check xem để lấy lịch sử giao dịch theo chuyển hay nhận
+    if (type === 1) {
+      result.forEach(function (item) {
+        if (item.type === 1) {
+          array.push(item);
+        }
+
+      });
+    }
+    else if (type === 2) {
+      result.forEach(function (item) {
+        if (item.type === 2) {
+          array.push(item);
+        }
+      });
+    }
+    else {
+      array = result;
+    }
+
   }
-  res.json(result);
+  res.json(array);
 };
+
+
 exports.receiveMoney = async (req, res) => {
   let accountNumber = req.params.accountNumber;
   if (accountNumber === '' || accountNumber === null) {
