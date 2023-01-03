@@ -1,4 +1,3 @@
-// const lichsuGiaoDichModel = require('../models/lichsuGiaoDich.model');
 const historyModel = require('../models/history.model');
 const taiKhoanNganHangModel = require('../models/taiKhoanNganHang.model');
 const loaiGiaoDichModel = require('../models/loaiGiaoDich.model');
@@ -143,7 +142,6 @@ exports.transfer = async (req, res) => {
     create_at: ngayGioGiaoDich,
   };
   try {
-    // await lichsuGiaoDichModel.add(data);
     await historyModel.add(data);
   } catch (ex) {
     ////////// có lỗi phát sinh lúc add lịch sử thì hoàn tiền lại
