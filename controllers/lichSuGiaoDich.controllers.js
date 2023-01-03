@@ -26,11 +26,15 @@ exports.getByAccountNumber = async (req, res) => {
   }
 
   const result = await historyModel.getByAccountNumber(accountNumber);
-
-  let type = + req.params.type || 0;
-  if (type === '' || type === null) {
-    type = 0;
+    
+  
+  let type = 0;
+  if(req.params.type)
+  {
+    type = req.params.type;
   }
+
+
   if (!result) {
     return res.json({ Message: "Can't find" });
   }
