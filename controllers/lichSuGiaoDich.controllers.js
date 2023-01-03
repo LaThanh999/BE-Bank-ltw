@@ -41,17 +41,6 @@ exports.getByAccountNumber = async (req, res) => {
   }
   res.json(result);
 };
-exports.transferMoney = async (req, res) => {
-  let accountNumber = req.params.accountNumber;
-  if (accountNumber === '' || accountNumber === null) {
-    return res.json({ Message: 'Please check input' });
-  }
-  const result = await lichSuGiaoDichModel.transferMoney(accountNumber);
-  if (!result) {
-    return res.json({ Message: "Can't find" });
-  }
-  res.json(result);
-};
 exports.receiveMoney = async (req, res) => {
   let accountNumber = req.params.accountNumber;
   if (accountNumber === '' || accountNumber === null) {

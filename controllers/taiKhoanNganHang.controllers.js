@@ -142,7 +142,7 @@ exports.transfer = async (req, res) => {
     create_at: ngayGioGiaoDich,
   };
   try {
-    // await lichsuGiaoDichModel.add(data);
+    await lichsuGiaoDichModel.add(data);
   } catch (ex) {
     ////////// có lỗi phát sinh lúc add lịch sử thì hoàn tiền lại
     await hoanTienNguoiGui(
