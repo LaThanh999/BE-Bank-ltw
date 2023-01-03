@@ -1,5 +1,5 @@
 const taiKhoanNganHangModel = require('../models/taiKhoanNganHang.model');
-const lichsuGiaoDichModel = require('../models/lichsuGiaoDich.model');
+// const lichsuGiaoDichModel = require('../models/lichsuGiaoDich.model');
 const loaiGiaoDichModel = require('../models/loaiGiaoDich.model');
 const moment = require('moment');
 exports.getAll = async (req, res) => {
@@ -142,7 +142,7 @@ exports.transfer = async (req, res) => {
     create_at: ngayGioGiaoDich,
   };
   try {
-    await lichsuGiaoDichModel.add(data);
+    // await lichsuGiaoDichModel.add(data);
   } catch (ex) {
     ////////// có lỗi phát sinh lúc add lịch sử thì hoàn tiền lại
     await hoanTienNguoiGui(
