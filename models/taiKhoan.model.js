@@ -22,6 +22,17 @@ module.exports = {
     return result[0];
   },
 
+  async getFindByNumberCardWithMoney(numberCard) {
+    const result = await db('taiKhoan')
+      .join('taiKhoanNganHang', 'taiKhoan.maTaiKhoan', 'taiKhoanNganHang.maTaiKhoan')
+      .select('taiKhoan.*', 'taiKhoanNganHang.soDu')
+      .where('taiKhoan.maTaiKhoan', numberCard);
+    if (!result) {
+      return null;
+    }
+    return result[0];
+  },
+
   async getFindByNumberCardAndBankId(numberCard, bankId) {
     const result = await db('taiKhoan').where({ maTaiKhoan: numberCard, maNganHang: bankId });
     if (!result) {
@@ -60,6 +71,17 @@ module.exports = {
       return null;
     }
     return result[0];
+  },
+
+  async getAllCustomer() {
+    const result = await db('taiKhoan')
+      .join('taiKhoanNganHang', 'taiKhoan.maTaiKhoan', 'taiKhoanNganHang.maTaiKhoan')
+      .select('taiKhoan.*', 'taiKhoanNganHang.soDu')
+      .where('taiKhoan.loaiTaiKhoan', 2);
+    if (result?.length < 1) {
+      return null;
+    }
+    return result;
   },
 
   async isValidRefreshToken(id, refreshToken) {
