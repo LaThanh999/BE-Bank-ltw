@@ -1,4 +1,4 @@
-const lichsuGiaoDichModel = require('../models/lichsuGiaoDich.model');
+// const lichsuGiaoDichModel = require('../models/lichsuGiaoDich.model');
 const taiKhoanNganHangModel = require('../models/taiKhoanNganHang.model');
 const loaiGiaoDichModel = require('../models/loaiGiaoDich.model');
 const moment = require('moment');
