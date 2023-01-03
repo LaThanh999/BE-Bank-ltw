@@ -10,7 +10,7 @@ const {
   transfer,
 } = require('../controllers/taiKhoanNganHang.controllers');
 // const mdwValidate = require('../middlewares/validate.mdw');
-const schema = require('../schemas/taiKhoanNganHang.json');
+// const schema = require('../schemas/taiKhoanNganHang.json');
 
 router.get('/', getAll);
 router.get('/:id', getById);
