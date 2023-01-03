@@ -1,5 +1,5 @@
 const taiKhoanNganHangModel = require('../models/taiKhoanNganHang.model');
-// const lichsuGiaoDichModel = require('../models/lichsuGiaoDich.model');
+const lichsuGiaoDichModel = require('../models/lichsuGiaoDich.model');
 const loaiGiaoDichModel = require('../models/loaiGiaoDich.model');
 const moment = require('moment');
 exports.getAll = async (req, res) => {
@@ -53,12 +53,8 @@ exports.transfer = async (req, res) => {
   if (!accountNguoiGui || !accountNguoiNhan) {
     return res.json({ Message: 'Không tìm thấy tài khoản ngân hàng.', Status: 4 });
   }
-  console.log('money before transfer', accountNguoiNhan.soDu);
-  console.log('money before transfer nguoi gui', accountNguoiGui.soDu);
   let soDuNguoiGui = parseFloat(accountNguoiGui.soDu) - parseFloat(thongTinGiaoDich.soTien);
   let soDuNguoiNhan = parseFloat(accountNguoiNhan.soDu) + parseFloat(thongTinGiaoDich.soTien);
-  console.log('money after transfer', soDuNguoiNhan);
-  console.log('money before transfer nguoi gui', soDuNguoiGui);
 
   // Cập nhật phí giao dịch
   const loaiGiaoDich = await loaiGiaoDichModel.getFindById(thongTinGiaoDich.idLoaiGiaoDich);
