@@ -15,18 +15,23 @@ module.exports = {
     return result[0];
   },
   async getByAccountNumber(value) {
-    var result = await db('lichSuGiaoDich as LSGD')
-      .join('taiKhoan as TKNhan', 'LSGD.taiKhoanNguoiNhan', '=', 'TKNhan.maTaiKhoan')
-      .join('taiKhoan as TKGui', 'LSGD.taiKhoanNguoiGui', '=', 'TKGui.maTaiKhoan')
-      .where({ taiKhoanNguoiGui: value })
-      .orWhere({ taiKhoanNguoiNhan: value })
-      .select('LSGD.*', 'TKNhan.hoTen as hoTenNguoiNhan', 'TKGui.hoTen as hoTenNguoiGui')
-      .orderBy('id', 'asc');
+    try {
+      var result = await db('lichSuGiaoDich as LSGD')
+        .leftJoin('taiKhoan as TKNhan', 'LSGD.taiKhoanNguoiNhan', '=', 'TKNhan.maTaiKhoan')
+        .leftJoin('taiKhoan as TKGui', 'LSGD.taiKhoanNguoiGui', '=', 'TKGui.maTaiKhoan')
+        .where({ taiKhoanNguoiGui: value })
+        .orWhere({ taiKhoanNguoiNhan: value })
+        .select('LSGD.*', 'TKNhan.hoTen as hoTenNguoiNhan', 'TKGui.hoTen as hoTenNguoiGui')
+        .orderBy('id', 'asc');
 
-    if (!result) {
-      return null;
+      if (!result) {
+        return null;
+      }
+      return result;
+    } catch (error) {
+      console.log('error', error);
+      return [];
     }
-    return result;
   },
 
   remove(id) {

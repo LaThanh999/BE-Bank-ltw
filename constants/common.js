@@ -1,0 +1,3 @@
+exports.ID_BANK_LTW = 4;
+
+exports.ID_TYPE_TRANSFER_ADD_CUSTOMER = 3;

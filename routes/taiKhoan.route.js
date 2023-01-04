@@ -10,8 +10,11 @@ const {
   getByNumberCard,
   getByNumberCardAndBankId,
   getByNumberCardWithMoney,
+  getByNumberCardOrEmailPhone,
   getNumberMoney,
   getAllCustomer,
+  addCustomer,
+  addMoneyCustomer,
 } = require('../controllers/taiKhoan.controllers');
 const mdwValidate = require('../middlewares/validate.mdw');
 const schema = require('../schemas/taiKhoan.json');
@@ -22,7 +25,10 @@ router.get('/getAllCustomer', getAllCustomer);
 router.get('/:id', getById);
 router.get('/getWithNumberCard/:numberCard', getByNumberCard);
 router.get('/getWithNumberCardWithMoney/:numberCard', getByNumberCardWithMoney);
+router.post('/getWithNumberCardOrEmailPhone', getByNumberCardOrEmailPhone);
 router.post('/getWithNumberCardAndBankId', getByNumberCardAndBankId);
+router.post('/addCustomer', addCustomer);
+router.post('/addMoneyCustomer', addMoneyCustomer);
 router.get('/getMoney/:id', getNumberMoney);
 router.post('/', mdwValidate(schema), insert);
 router.delete('/:id', remove);

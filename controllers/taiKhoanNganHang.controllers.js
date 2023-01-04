@@ -63,13 +63,9 @@ exports.transfer = async (req, res) => {
 
   ///// Kiểm tra tài khoản nào tốn phí
   if (thongTinGiaoDich.traPhi === 1) {
-    console.log('soDuNguoiGui Before', soDuNguoiGui);
     soDuNguoiGui = soDuNguoiGui - parseFloat(loaiGiaoDich.phiGiaoDich);
-    console.log('soDuNguoiGui After', soDuNguoiGui);
   } else if (thongTinGiaoDich.traPhi === 0) {
-    console.log('soDuNguoiNhan Before', soDuNguoiNhan);
     soDuNguoiNhan = soDuNguoiNhan - parseFloat(loaiGiaoDich.phiGiaoDich);
-    console.log('soDuNguoiNhan After', soDuNguoiNhan);
   }
 
   //////// kiểm tra số tiền có âm hay không

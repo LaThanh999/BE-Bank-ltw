@@ -26,14 +26,11 @@ exports.getByAccountNumber = async (req, res) => {
   }
 
   const result = await historyModel.getByAccountNumber(accountNumber);
-    
-  
-  let type = 0;
-  if(req.params.type)
-  {
-    type = req.params.type;
-  }
 
+  let type = 0;
+  if (req.params.type) {
+    type = +req.params.type;
+  }
 
   if (!result) {
     return res.json({ Message: "Can't find" });
@@ -51,30 +48,25 @@ exports.getByAccountNumber = async (req, res) => {
       // print(temp)
     });
 
-////// Check xem để lấy lịch sử giao dịch theo chuyển hay nhận
+    ////// Check xem để lấy lịch sử giao dịch theo chuyển hay nhận
     if (type === 1) {
       result.forEach(function (item) {
         if (item.type === 1) {
           array.push(item);
         }
-
       });
-    }
-    else if (type === 2) {
+    } else if (type === 2) {
       result.forEach(function (item) {
         if (item.type === 2) {
           array.push(item);
         }
       });
-    }
-    else {
+    } else {
       array = result;
     }
-
   }
   res.json(array);
 };
-
 
 exports.receiveMoney = async (req, res) => {
   let accountNumber = req.params.accountNumber;
