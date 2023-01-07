@@ -20,6 +20,7 @@ module.exports = {
       .select('LSGD.*', 'TKNhan.hoTen as hoTenNguoiNhan', 'TKGui.hoTen as hoTenNguoiGui')
       .orderBy('id', 'asc');
 
+      
     if (!result) {
       return null;
     }

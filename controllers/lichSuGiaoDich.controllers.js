@@ -1,5 +1,5 @@
 const historyModel = require('../models/history.model');
-
+const moment = require('moment');
 exports.getAll = async (req, res) => {
   const result = await historyModel.getAll();
 
@@ -8,6 +8,20 @@ exports.getAll = async (req, res) => {
 
 exports.getAllAnotherBank = async (req, res) => {
   const result = await historyModel.getAllAnotherBank();
+
+  res.json(result);
+};
+exports.getByBankID = async (req, res) => {
+  const id = +req.params.id || 0;
+
+  if (id === 0) {
+    return res.json({ Message: 'Please check input' });
+  }
+
+  const result = await historyModel.getByBankID(id);
+  if (!result) {
+    return res.json({ Message: 'No have history !!!' });
+  }
 
   res.json(result);
 };

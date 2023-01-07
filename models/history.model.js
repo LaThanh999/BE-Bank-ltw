@@ -7,7 +7,7 @@ module.exports = {
   async getAll() {
     var result = await db('lichSuGiaoDich as LSGD')
       .join('taiKhoan as TKNhan', 'LSGD.taiKhoanNguoiNhan', '=', 'TKNhan.maTaiKhoan')
-      .join('taiKhoan as TKGui', 'LSGD.taiKhoanNguoiGui', '=', 'TKGui.maTaiKhoan')
+
       .join('nganHangDoiTac as NganHangNhan', 'LSGD.idNganHangNhan', '=', 'NganHangNhan.id')
       .join('nganHangDoiTac as NganHangGui', 'LSGD.idNganHangGui', '=', 'NganHangGui.id')
       .where('LSGD.idNganHangNhan', 4)
@@ -15,7 +15,6 @@ module.exports = {
       .select(
         'LSGD.*',
         'TKNhan.hoTen as hoTenNguoiNhan',
-        'TKGui.hoTen as hoTenNguoiGui',
         'NganHangNhan.tenNganHang as tenNganHangNhan',
         'NganHangGui.tenNganHang as tenNganHangGui',
       )
@@ -29,7 +28,6 @@ module.exports = {
   async getAllAnotherBank() {
     var result = await db('lichSuGiaoDich as LSGD')
       .join('taiKhoan as TKNhan', 'LSGD.taiKhoanNguoiNhan', '=', 'TKNhan.maTaiKhoan')
-      .join('taiKhoan as TKGui', 'LSGD.taiKhoanNguoiGui', '=', 'TKGui.maTaiKhoan')
       .join('nganHangDoiTac as NganHangNhan', 'LSGD.idNganHangNhan', '=', 'NganHangNhan.id')
       .join('nganHangDoiTac as NganHangGui', 'LSGD.idNganHangGui', '=', 'NganHangGui.id')
       .whereNot('LSGD.idNganHangNhan', 4)
@@ -37,7 +35,6 @@ module.exports = {
       .select(
         'LSGD.*',
         'TKNhan.hoTen as hoTenNguoiNhan',
-        'TKGui.hoTen as hoTenNguoiGui',
         'NganHangNhan.tenNganHang as tenNganHangNhan',
         'NganHangGui.tenNganHang as tenNganHangGui',
       )
@@ -54,6 +51,33 @@ module.exports = {
       return null;
     }
     return result[0];
+  },
+  async getByBankID(id) {
+    try {
+      var result = await db('lichSuGiaoDich as LSGD')
+        .join('taiKhoan as TKNhan', 'LSGD.taiKhoanNguoiNhan', '=', 'TKNhan.maTaiKhoan')
+        .join('taiKhoan as TKGui', 'LSGD.taiKhoanNguoiGui', '=', 'TKGui.maTaiKhoan')
+        .join('nganHangDoiTac as NganHangNhan', 'LSGD.idNganHangNhan', '=', 'NganHangNhan.id')
+        .join('nganHangDoiTac as NganHangGui', 'LSGD.idNganHangGui', '=', 'NganHangGui.id')
+        .where({ idNganHangGui: id })
+        .orWhere({ idNganHangNhan: id })
+        .select(
+          'LSGD.*',
+          'TKNhan.hoTen as hoTenNguoiNhan',
+          'TKGui.hoTen as hoTenNguoiGui',
+          'NganHangNhan.tenNganHang as tenNganHangNhan',
+          'NganHangGui.tenNganHang as tenNganHangGui',
+        )
+        .orderBy('id', 'asc');
+
+      if (!result) {
+        return null;
+      }
+      return result;
+    } catch (error) {
+      console.log('error', error);
+      return [];
+    }
   },
   async getByAccountNumber(value) {
     try {
