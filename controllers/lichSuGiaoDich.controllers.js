@@ -2,6 +2,8 @@ const historyModel = require('../models/history.model');
 
 exports.getAll = async (req, res) => {
   const result = await historyModel.getAll();
+  
+ 
   res.json(result);
 };
 
