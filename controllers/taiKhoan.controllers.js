@@ -120,6 +120,15 @@ exports.getNumberMoney = async (req, res) => {
   res.status(201).json(result);
 };
 
+exports.blockAccount = async (req, res) => {
+  const { numberCard } = req.body;
+  if (!numberCard) {
+    return res.status(401).json({ Message: 'Please check input' });
+  }
+  const result = await taiKhoanModel.updateBuyNumberCard(numberCard, { isBlock: 1 });
+  res.status(201).json(result);
+};
+
 exports.getAllCustomer = async (req, res) => {
   const result = await taiKhoanModel.getAllCustomer();
   res.json(result);
