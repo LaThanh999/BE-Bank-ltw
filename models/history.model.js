@@ -4,8 +4,19 @@ module.exports = {
   add(value) {
     return db('lichSuGiaoDich').insert(value);
   },
-  getAll() {
-    return db('lichSuGiaoDich');
+  async getAll() {
+    var result = await db('lichSuGiaoDich as LSGD')
+      .join('taiKhoan as TKNhan', 'LSGD.taiKhoanNguoiNhan', '=', 'TKNhan.maTaiKhoan')
+      .join('taiKhoan as TKGui', 'LSGD.taiKhoanNguoiGui', '=', 'TKGui.maTaiKhoan')
+      .join("nganHangDoiTac as NganHangNhan",'LSGD.idNganHangNhan','=','NganHangNhan.id')
+      .join("nganHangDoiTac as NganHangGui",'LSGD.idNganHangGui','=','NganHangGui.id')
+      .select('LSGD.*', 'TKNhan.hoTen as hoTenNguoiNhan', 'TKGui.hoTen as hoTenNguoiGui','NganHangNhan.tenNganHang as tenNganHangNhan','NganHangGui.tenNganHang as tenNganHangGui')
+      .orderBy('id', 'asc');
+
+    if (!result) {
+      return null;
+    }
+    return result;
   },
   async getFindById(id) {
     const result = await db('lichSuGiaoDich').where({ id: id });
