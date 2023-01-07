@@ -10,6 +10,22 @@ module.exports = {
       .join('taiKhoan as TKGui', 'LSGD.taiKhoanNguoiGui', '=', 'TKGui.maTaiKhoan')
       .join("nganHangDoiTac as NganHangNhan", 'LSGD.idNganHangNhan', '=', 'NganHangNhan.id')
       .join("nganHangDoiTac as NganHangGui", 'LSGD.idNganHangGui', '=', 'NganHangGui.id')
+      .where('LSGD.idNganHangNhan',4)
+      .andWhere('LSGD.idNganHangGui', 4)
+      .select('LSGD.*', 'TKNhan.hoTen as hoTenNguoiNhan', 'TKGui.hoTen as hoTenNguoiGui', 'NganHangNhan.tenNganHang as tenNganHangNhan', 'NganHangGui.tenNganHang as tenNganHangGui')
+      .orderBy('id', 'asc');
+      
+    if (!result) {
+      return null;
+    }
+    return result;
+  },
+  async getAllAnotherBank() {
+    var result = await db('lichSuGiaoDich as LSGD')
+      .join('taiKhoan as TKNhan', 'LSGD.taiKhoanNguoiNhan', '=', 'TKNhan.maTaiKhoan')
+      .join('taiKhoan as TKGui', 'LSGD.taiKhoanNguoiGui', '=', 'TKGui.maTaiKhoan')
+      .join("nganHangDoiTac as NganHangNhan", 'LSGD.idNganHangNhan', '=', 'NganHangNhan.id')
+      .join("nganHangDoiTac as NganHangGui", 'LSGD.idNganHangGui', '=', 'NganHangGui.id')
       .whereNot('LSGD.idNganHangNhan',4)
       .orWhereNot('LSGD.idNganHangGui', 4)
       .select('LSGD.*', 'TKNhan.hoTen as hoTenNguoiNhan', 'TKGui.hoTen as hoTenNguoiGui', 'NganHangNhan.tenNganHang as tenNganHangNhan', 'NganHangGui.tenNganHang as tenNganHangGui')
