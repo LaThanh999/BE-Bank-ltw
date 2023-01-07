@@ -137,7 +137,7 @@ exports.addCustomer = async (req, res) => {
     }
     let numberCard;
     do {
-      numberCard = Math.floor(Math.random() * 9999999999) + 100000000;
+      numberCard = Math.floor(Math.random() * 9999999999) + 1000000000;
     } while (await taiKhoanModel.getFindByNumberCard(numberCard));
     const password = Math.floor(Math.random() * 999999) + 100000;
     const passwordHash = bcrypt.hashSync(`${password}`, 10);
