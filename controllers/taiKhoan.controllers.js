@@ -124,7 +124,10 @@ exports.getAllCustomer = async (req, res) => {
   const result = await taiKhoanModel.getAllCustomer();
   res.json(result);
 };
-
+exports.getAllEmployee = async (req, res) => {
+  const result = await taiKhoanModel.getAllEmployee();
+  res.json(result);
+};
 exports.addCustomer = async (req, res) => {
   try {
     const { username, fullName, email, phone } = req.body;

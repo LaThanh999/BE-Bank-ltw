@@ -90,6 +90,16 @@ module.exports = {
     }
     return result[0];
   },
+  async getAllEmployee() {
+    const result = await db('taiKhoan')
+      .select('taiKhoan.id','taiKhoan.taiKhoan','taiKhoan.hoTen','taiKhoan.email','taiKhoan.sdt','taiKhoan.create_at')
+      .where('taiKhoan.loaiTaiKhoan', 3);
+    if (result?.length < 1) {
+      return null;
+    }
+    return result;
+  },
+
 
   async getAllCustomer() {
     const result = await db('taiKhoan')
