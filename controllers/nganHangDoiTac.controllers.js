@@ -1,9 +1,12 @@
 const nganHangDoiTacModel = require('../models/nganHangDoiTac.model');
 const taiKhoanModel = require('../models/taiKhoan.model');
 const taiKhoanNganHangModel = require('../models/taiKhoanNganHang.model');
+const historyModel = require('../models/history.model');
+const moment = require('moment');
 const fs = require('fs');
 const path = require('path');
 const jwt = require('jsonwebtoken');
+const constant = require('../constants/common');
 
 exports.getAll = async (req, res) => {
   const result = await nganHangDoiTacModel.getAll();
@@ -89,10 +92,44 @@ exports.getInfoWithNumberCard = async (req, res) => {
 
 exports.transferMoney = async (req, res) => {
   try {
-    const { numberCard, numberMoney } = req.body;
+    const { numberCard, numberMoney, numberCardFrom, content } = req.body;
+    console.log({ numberCard, numberMoney, numberCardFrom, content });
     const taiKhoan = await taiKhoanNganHangModel.getFindByAccountNumber(numberCard);
     if (taiKhoan.id) {
       await taiKhoanNganHangModel.updateAccount(taiKhoan.id, +taiKhoan.soDu + +numberMoney);
+
+      //////////////  Add lịch sử giao dịch  //////////////
+      let date_ob = new Date();
+      // current date
+      let date = ('0' + date_ob.getDate()).slice(-2);
+      // current month
+      let month = ('0' + (date_ob.getMonth() + 1)).slice(-2);
+      // current year
+      let year = date_ob.getFullYear();
+      // current minutes
+      let minutes = date_ob.getMinutes();
+      // Tạo mã giao dịch
+      let number = parseInt(year + month + date + minutes + '') || 0;
+      let mts = moment().unix() + number;
+      let maGiaoDich = mts.toString();
+
+      let ngayGioGiaoDich = moment(date_ob).format('YYYY-MM-DD HH:mm:ss');
+
+      var data = {
+        maGiaoDich: maGiaoDich,
+        taiKhoanNguoiNhan: numberCard,
+        taiKhoanNguoiGui: numberCardFrom,
+        soTienChuyen: numberMoney,
+        tienThucNhan: numberMoney,
+        phiGiaoDich: 10000,
+        noiDung: content,
+        idNganHangNhan: constant.ID_BANK_LTW,
+        idNganHangGui: 5,
+        idLoaiGiaoDich: 2,
+        ngayGioGiaoDich: ngayGioGiaoDich,
+        create_at: ngayGioGiaoDich,
+      };
+      await historyModel.add(data);
       res.status(201).json({
         status: 1,
         message: 'Giao dịch thành công',
@@ -104,6 +141,7 @@ exports.transferMoney = async (req, res) => {
       });
     }
   } catch (error) {
+    console.log('error', error);
     res.status(401).json({
       status: 2,
       message: 'Giao dịch thất bại',

@@ -303,3 +303,54 @@ error: Jan-02-2023 19:16:21: 	500 - Internal Server Error - Knex: Timeout acquir
 error: Jan-02-2023 19:16:21: 	500 - Internal Server Error - Knex: Timeout acquiring a connection. The pool is probably full. Are you missing a .transacting(trx) call? - URL: /taiKhoan/getMoney/7 - Method: GET
 error: Jan-02-2023 19:16:21: 	500 - Internal Server Error - Knex: Timeout acquiring a connection. The pool is probably full. Are you missing a .transacting(trx) call? - URL: /danhSachNguoiNhan/getByAccountNumber/null - Method: GET
 error: Jan-02-2023 19:16:21: 	500 - Internal Server Error - Knex: Timeout acquiring a connection. The pool is probably full. Are you missing a .transacting(trx) call? - URL: /lichSuGiaoDich/getByAccountNumber/null - Method: GET
+error: Jan-07-2023 14:45:02: 	404 ||  Not Found - URL: / -  Method: [object Object]
+error: Jan-07-2023 14:45:07: 	404 ||  Not Found - URL: /swagger -  Method: [object Object]
+info: Jan-07-2023 15:16:16: 	Method: POST - URL: /dangNhap - Successfully
+info: Jan-07-2023 15:52:44: 	Method: POST - URL: /dangNhap - Successfully
+info: Jan-07-2023 15:55:04: 	Method: POST - URL: /dangNhap - Successfully
+info: Jan-07-2023 15:55:04: 	Method: POST - URL: /dangNhap - Successfully
+info: Jan-07-2023 15:55:11: 	Method: POST - URL: /dangNhap - Successfully
+info: Jan-07-2023 15:55:11: 	Method: POST - URL: /dangNhap - Successfully
+info: Jan-07-2023 15:55:25: 	Method: POST - URL: /dangNhap - Successfully
+info: Jan-07-2023 15:55:26: 	Method: POST - URL: /dangNhap - Successfully
+info: Jan-07-2023 15:55:41: 	Method: POST - URL: /dangNhap - Successfully
+info: Jan-07-2023 15:55:41: 	Method: POST - URL: /dangNhap - Successfully
+info: Jan-07-2023 15:56:08: 	Method: POST - URL: /dangNhap - Successfully
+info: Jan-07-2023 15:56:08: 	Method: POST - URL: /dangNhap - Successfully
+info: Jan-07-2023 15:56:18: 	Method: POST - URL: /dangNhap - Successfully
+info: Jan-07-2023 16:02:09: 	Method: POST - URL: /dangNhap - Successfully
+error: Jan-07-2023 16:32:57: 	500 - Internal Server Error - insert into `otpTransfer` (`numberCardFrom`, `numberCardTo`, `otp`) values (DEFAULT, DEFAULT, 6257) - Field 'numberCardFrom' doesn't have a default value - URL: /sendOTP - Method: POST
+error: Jan-07-2023 16:32:58: 	500 - Internal Server Error - insert into `otpTransfer` (`numberCardFrom`, `numberCardTo`, `otp`) values (DEFAULT, DEFAULT, 10152) - Field 'numberCardFrom' doesn't have a default value - URL: /sendOTP - Method: POST
+error: Jan-07-2023 16:32:59: 	500 - Internal Server Error - insert into `otpTransfer` (`numberCardFrom`, `numberCardTo`, `otp`) values (DEFAULT, DEFAULT, 1507) - Field 'numberCardFrom' doesn't have a default value - URL: /sendOTP - Method: POST
+error: Jan-07-2023 16:32:59: 	500 - Internal Server Error - insert into `otpTransfer` (`numberCardFrom`, `numberCardTo`, `otp`) values (DEFAULT, DEFAULT, 2570) - Field 'numberCardFrom' doesn't have a default value - URL: /sendOTP - Method: POST
+error: Jan-07-2023 16:47:49: 	500 - Internal Server Error - update `danhSachNguoiNo` set `tinhTrang` = 1 where `id` = NaN - Unknown column 'NaN' in 'where clause' - URL: /danhSachNguoiNo/undefined - Method: PUT
+error: Jan-07-2023 16:49:25: 	500 - Internal Server Error - update `danhSachNguoiNo` set `tinhTrang` = 1 where `id` = NaN - Unknown column 'NaN' in 'where clause' - URL: /danhSachNguoiNo/undefined - Method: PUT
+error: Jan-07-2023 16:51:17: 	500 - Internal Server Error - update `danhSachNguoiNo` set `tinhTrang` = 1 where `id` = NaN - Unknown column 'NaN' in 'where clause' - URL: /danhSachNguoiNo/null - Method: PUT
+error: Jan-07-2023 16:52:12: 	500 - Internal Server Error - update `danhSachNguoiNo` set `tinhTrang` = 1 where `id` = NaN - Unknown column 'NaN' in 'where clause' - URL: /danhSachNguoiNo/null - Method: PUT
+error: Jan-07-2023 16:52:28: 	500 - Internal Server Error - update `danhSachNguoiNo` set `tinhTrang` = 1 where `id` = NaN - Unknown column 'NaN' in 'where clause' - URL: /danhSachNguoiNo/null - Method: PUT
+info: Jan-07-2023 17:06:45: 	Method: POST - URL: /dangNhap - Successfully
+info: Jan-07-2023 17:10:16: 	Method: POST - URL: /dangNhap - Successfully
+error: Jan-07-2023 17:10:17: 	404 ||  Not Found - URL: /lichSuGiaoDich/getByAccountNumber/ -  Method: [object Object]
+error: Jan-07-2023 17:10:17: 	404 ||  Not Found - URL: /danhSachNguoiNhan/getByAccountNumber/ -  Method: [object Object]
+error: Jan-07-2023 17:10:21: 	404 ||  Not Found - URL: /lichSuGiaoDich/getByAccountNumber/ -  Method: [object Object]
+error: Jan-07-2023 17:10:21: 	404 ||  Not Found - URL: /danhSachNguoiNhan/getByAccountNumber/ -  Method: [object Object]
+info: Jan-07-2023 17:10:51: 	Method: POST - URL: /dangNhap - Successfully
+error: Jan-07-2023 17:16:42: 	404 ||  Not Found - URL: /lichSuGiaoDich/getByAccountNumber/ -  Method: [object Object]
+error: Jan-07-2023 17:16:42: 	404 ||  Not Found - URL: /danhSachNguoiNhan/getByAccountNumber/ -  Method: [object Object]
+error: Jan-07-2023 17:27:49: 	404 ||  Not Found - URL: /lichSuGiaoDich/getByAccountNumber/ -  Method: [object Object]
+error: Jan-07-2023 17:27:49: 	404 ||  Not Found - URL: /danhSachNguoiNhan/getByAccountNumber/ -  Method: [object Object]
+error: Jan-07-2023 17:28:13: 	404 ||  Not Found - URL: /lichSuGiaoDich/getByAccountNumber/ -  Method: [object Object]
+error: Jan-07-2023 17:28:13: 	404 ||  Not Found - URL: /danhSachNguoiNhan/getByAccountNumber/ -  Method: [object Object]
+error: Jan-07-2023 17:29:09: 	404 ||  Not Found - URL: /lichSuGiaoDich/getByAccountNumber/ -  Method: [object Object]
+error: Jan-07-2023 17:29:09: 	404 ||  Not Found - URL: /danhSachNguoiNhan/getByAccountNumber/ -  Method: [object Object]
+error: Jan-07-2023 17:29:09: 	404 ||  Not Found - URL: /lichSuGiaoDich/getByAccountNumber/ -  Method: [object Object]
+error: Jan-07-2023 17:29:09: 	404 ||  Not Found - URL: /danhSachNguoiNhan/getByAccountNumber/ -  Method: [object Object]
+error: Jan-07-2023 17:29:11: 	404 ||  Not Found - URL: /lichSuGiaoDich/getByAccountNumber/ -  Method: [object Object]
+error: Jan-07-2023 17:29:11: 	404 ||  Not Found - URL: /danhSachNguoiNhan/getByAccountNumber/ -  Method: [object Object]
+error: Jan-07-2023 17:29:13: 	404 ||  Not Found - URL: /lichSuGiaoDich/getByAccountNumber/ -  Method: [object Object]
+error: Jan-07-2023 17:29:13: 	404 ||  Not Found - URL: /danhSachNguoiNhan/getByAccountNumber/ -  Method: [object Object]
+error: Jan-07-2023 17:29:17: 	404 ||  Not Found - URL: /lichSuGiaoDich/getByAccountNumber/ -  Method: [object Object]
+error: Jan-07-2023 17:29:17: 	404 ||  Not Found - URL: /danhSachNguoiNhan/getByAccountNumber/ -  Method: [object Object]
+error: Jan-07-2023 17:29:26: 	404 ||  Not Found - URL: /lichSuGiaoDich/getByAccountNumber/ -  Method: [object Object]
+error: Jan-07-2023 17:29:26: 	404 ||  Not Found - URL: /danhSachNguoiNhan/getByAccountNumber/ -  Method: [object Object]
+info: Jan-07-2023 19:26:35: 	Method: POST - URL: /dangNhap - Successfully
