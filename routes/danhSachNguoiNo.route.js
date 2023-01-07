@@ -14,7 +14,7 @@ const schema = require('../schemas/danhSachNguoiNo.json');
 
 router.get('/', getAll);
 router.get('/:id', getById);
-router.post('/', mdwValidate(schema), insert);
+router.post('/', insert);
 router.post('/getByNumberCard', getByNumberCard);
 router.delete('/:id', remove);
 router.put('/:id', edit);

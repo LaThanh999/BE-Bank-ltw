@@ -113,7 +113,6 @@ exports.resetPassword = async (req, res) => {
 
 exports.sendForgotPassWordOtp = async (req, res) => {
   const { username } = req.body;
-  console.log('username', username);
   const taiKhoan = await taiKhoanModel.getWithUsernameOrEmail(username);
   if (_.isEmpty(taiKhoan)) {
     return res.status(401).json({

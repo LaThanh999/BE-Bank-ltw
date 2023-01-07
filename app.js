@@ -4,7 +4,22 @@ var cors = require('cors');
 var morgan = require('morgan');
 require('express-async-errors');
 require('dotenv').config();
+const http = require('http').Server(app);
 const logger = require('./logger');
+
+var io = require('socket.io')(http);
+
+io.on('connection', function (socket) {
+  socket.on('sendDataClient', function (data) {
+    // Handle khi có sự kiện tên là sendDataClient từ phía client
+    io.emit('sendDataServer', 'updated'); // phát sự kiện  có tên sendDataServer cùng với dữ liệu tin nhắn từ phía server
+  });
+
+  socket.on('msg', function (data) {
+    //Send message to everyone
+    io.sockets.emit('newmsg', data);
+  });
+});
 
 app.use(express.json());
 app.use(morgan('dev'));
@@ -28,8 +43,10 @@ app.use('/loaiTaiKhoan', authMdw, require('./routes/loaiTaiKhoan.route'));
 app.use('/nganHangDoiTac', authMdw, require('./routes/nganHangDoiTac.route'));
 app.use('/taiKhoan', authMdw, require('./routes/taiKhoan.route'));
 app.use('/taiKhoanNganHang', authMdw, require('./routes/taiKhoanNganHang.route'));
+app.use('/notifications', authMdw, require('./routes/notifications.route'));
 app.use('/dangNhap', require('./routes/dangNhap.route'));
 app.use('/sendOTP', require('./routes/otpTransfer.route'));
+app.use('/connectBank', require('./routes/bankConnect.route'));
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.use(function (err, req, res, next) {
@@ -62,6 +79,6 @@ app.use((req, res, next) => {
 
 const PORT = process.env.PORT || 3008;
 
-app.listen(PORT, () => {
+http.listen(PORT, () => {
   console.log(`run server http://localhost:${PORT}`);
 });

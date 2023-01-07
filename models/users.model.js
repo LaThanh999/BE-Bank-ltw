@@ -26,7 +26,6 @@ module.exports = {
     return db('taiKhoan').where('id', id).del();
   },
   update(id, user) {
-    console.log({ id, user });
     return db('taiKhoan').where('id', id).update(user);
   },
   async isValidRefreshToken(id, refreshToken) {

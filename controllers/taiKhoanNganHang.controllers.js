@@ -59,8 +59,6 @@ exports.transfer = async (req, res) => {
   // Cập nhật phí giao dịch
   const loaiGiaoDich = await loaiGiaoDichModel.getFindById(thongTinGiaoDich.idLoaiGiaoDich);
 
-  console.log('loaiGiaoDich', thongTinGiaoDich.traPhi);
-
   ///// Kiểm tra tài khoản nào tốn phí
   if (thongTinGiaoDich.traPhi === 1) {
     soDuNguoiGui = soDuNguoiGui - parseFloat(loaiGiaoDich.phiGiaoDich);

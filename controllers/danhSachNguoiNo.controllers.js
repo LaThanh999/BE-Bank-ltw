@@ -1,4 +1,5 @@
 const danhSachNguoGuiModel = require('../models/danhSachNguoiNo.model');
+const notificationsModel = require('../models/notifications.model');
 const moment = require('moment');
 
 exports.getAll = async (req, res) => {
@@ -34,8 +35,16 @@ exports.getByNumberCard = async (req, res) => {
 
 exports.insert = async (req, res) => {
   const danhSachNguoiNo = req.body;
+  // const { soTienChuyen, maTaiKhoanChuNo, maTaiKhoanNguoiNo } = danhSachNguoiNo;
   danhSachNguoiNo.create_at = moment().format('YYYY-MM-DD HH:mm:ss').toString();
-  const result = await danhSachNguoGuiModel.add(danhSachNguoiNo);
+  // await notificationsModel.add({
+  //   numberCardForm: maTaiKhoanChuNo,
+  //   numberCardTo: maTaiKhoanNguoiNo,
+  //   message: `Thanh toán nhắc nợ ${soTienChuyen} VND`,
+  //   type: 0,
+  //   isSeen: 0,
+  // });
+  const result = await danhSachNguoGuiModel.addOwe(danhSachNguoiNo);
   danhSachNguoiNo.id = result;
   res.status(201).json(danhSachNguoiNo);
 };

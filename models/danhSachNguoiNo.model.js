@@ -49,6 +49,25 @@ module.exports = {
   add(danhSachNguoiNo) {
     return db('danhSachNguoiNo').insert(danhSachNguoiNo);
   },
+  async addOwe(danhSachNguoiNo) {
+    try {
+      let result;
+      await db.transaction(async (trx) => {
+        const { soTienChuyen, maTaiKhoanChuNo, maTaiKhoanNguoiNo } = danhSachNguoiNo;
+        result = await trx('danhSachNguoiNo').insert(danhSachNguoiNo);
+        await trx('notifications').insert({
+          numberCardFrom: maTaiKhoanChuNo,
+          numberCardTo: maTaiKhoanNguoiNo,
+          message: `Thanh toán nhắc nợ ${soTienChuyen} VND`,
+          type: 0,
+          isSeen: 0,
+        });
+      });
+      return result;
+    } catch (error) {
+      console.log('err', error);
+    }
+  },
   remove(id) {
     return db('danhSachNguoiNo').where('id', id).del();
   },
