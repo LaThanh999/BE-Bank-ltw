@@ -61,6 +61,8 @@ module.exports = {
           message: `Thanh toán nhắc nợ ${soTienChuyen} VND`,
           type: 0,
           isSeen: 0,
+          money: +soTienChuyen,
+          idOwe: result,
         });
       });
       return result;

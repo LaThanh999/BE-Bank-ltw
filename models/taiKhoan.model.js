@@ -78,8 +78,10 @@ module.exports = {
   update(id, user) {
     return db('taiKhoan').where('id', id).update(user);
   },
+  updateBuyNumberCard(numberCard, user) {
+    return db('taiKhoan').where('maTaiKhoan', numberCard).update(user);
+  },
   async getNumberMoneyWithId(value) {
-    console.log('value', value);
     const result = await db('taiKhoan')
       .join('taiKhoanNganHang', 'taiKhoan.maTaiKhoan', 'taiKhoanNganHang.maTaiKhoan')
       .select('taiKhoan.hoTen', 'taiKhoan.maTaiKhoan', 'taiKhoanNganHang.soDu')

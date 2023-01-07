@@ -50,8 +50,9 @@ exports.addNotificationsTransfer = async (req, res) => {
       numberCardFrom,
       numberCardTo,
       message: `Đã thanh toán số nợ ${numberOfMoney} VND`,
-      type: 0,
+      type: 1,
       isSeen: 0,
+      money: +numberOfMoney,
     });
     return res.json({
       status: 1,

@@ -15,6 +15,14 @@ exports.login = async (req, res) => {
     });
   }
 
+  if (+taiKhoan.isBlock === 1) {
+    return res.status(401).json({
+      Authorization: false,
+      status: 3,
+      message: 'Tài khoản đã bị khóa',
+    });
+  }
+
   bcrypt.compare(password, taiKhoan.matKhau, async (err, success) => {
     if (!!err) {
       return res.status(401).json({

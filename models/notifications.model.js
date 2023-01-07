@@ -12,8 +12,13 @@ module.exports = {
       .leftJoin('taiKhoan as TKGui', 'notifications.numberCardFrom', '=', 'TKGui.maTaiKhoan')
       .leftJoin('taiKhoan as TKNhan', 'notifications.numberCardTo', '=', 'TKNhan.maTaiKhoan')
       .where({ numberCardTo: value })
-      .select('notifications.*', 'TKNhan.hoTen as hoTenNguoiNhan', 'TKGui.hoTen as hoTenNguoiGui')
-      .orderBy('id', 'asc');
+      .select(
+        'notifications.*',
+        'TKNhan.hoTen as hoTenNguoiNhan',
+        'TKGui.hoTen as hoTenNguoiGui',
+        'TKNhan.email as email',
+      )
+      .orderBy('id', 'desc');
 
     if (!result) {
       return null;
