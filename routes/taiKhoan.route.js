@@ -13,6 +13,7 @@ const {
   getByNumberCardOrEmailPhone,
   getNumberMoney,
   getAllCustomer,
+  getAllEmployee,
   addCustomer,
   addMoneyCustomer,
   blockAccount,
@@ -23,6 +24,7 @@ const { login } = require('../controllers/dangNhap.controllers');
 
 router.get('/getAll', getAll);
 router.get('/getAllCustomer', getAllCustomer);
+router.get('/getAllEmployee', getAllEmployee);
 router.get('/:id', getById);
 router.get('/getWithNumberCard/:numberCard', getByNumberCard);
 router.get('/getWithNumberCardWithMoney/:numberCard', getByNumberCardWithMoney);

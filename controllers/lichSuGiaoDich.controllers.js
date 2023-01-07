@@ -2,9 +2,17 @@ const historyModel = require('../models/history.model');
 
 exports.getAll = async (req, res) => {
   const result = await historyModel.getAll();
+  
+ 
   res.json(result);
 };
 
+exports.getAllAnotherBank = async (req, res) => {
+  const result = await historyModel.getAllAnotherBank();
+  
+ 
+  res.json(result);
+};
 exports.getById = async (req, res) => {
   const id = +req.params.id || 0;
 
